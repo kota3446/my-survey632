@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The Digital Mind — Research Survey</title>
-<meta name="description" content="A gamified research journey about social media: risks, benefits, habits and protecting children online in the EU.">
+<meta name="description" content="A short, gamified research journey about social media, online risks and protecting children online in the EU.">
 <meta name="theme-color" content="#061221">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -304,204 +304,6 @@ canvas#confetti{position:fixed;inset:0;pointer-events:none;z-index:50}
   .swipe-card{padding:20px 16px}
 }
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-
-/* ===== v3 additions ===== */
-.jnode .jlabel{display:none}
-.jnode.now .jlabel{display:block}
-.jnode.skip .jdot{opacity:.35;border-style:dashed}
-.jline{min-width:6px;margin:0 6px}
-.stamps{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.stampc{font-size:18px}
-.stampc.skip{opacity:.2;border-style:dotted}
-.badges{grid-template-columns:repeat(6,1fr)}
-.mstamps{font-weight:800;font-size:13px;color:var(--gold);white-space:nowrap}
-.levels{grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}
-.lvl.bonus{border-color:var(--lav);background:linear-gradient(150deg,#1d1846,#0b1f33)}
-.lvl.bonus .n{color:var(--lav)}
-.intro-card{display:flex;gap:12px;align-items:flex-start;margin-top:16px;padding:14px 16px;border-radius:14px;background:linear-gradient(120deg,#1d1846,#123247);border:1px solid #3d3a7a}
-.intro-card span{font-size:24px}.intro-card p{margin:0;color:#dbe4f5;font-size:15px}
-.chip-row{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:14px}
-.chip{border:1px dashed #3d6382;background:transparent;border-radius:99px;padding:9px 16px;font-size:13px;font-weight:700;cursor:pointer;color:var(--muted)}
-.chip[aria-pressed=true]{border:2px solid var(--teal);color:var(--text);background:#0e2b3b}
-.chip.all{border-style:solid;border-color:var(--lav);color:var(--lav)}
-.shake{animation:shake .4s}
-@keyframes shake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
-.toast{position:sticky;bottom:12px;margin:12px auto 0;width:fit-content;max-width:100%;background:#2a1d3f;border:1px solid var(--lav);color:#e6e2ff;padding:10px 16px;border-radius:12px;font-weight:700;font-size:13.5px;text-align:center;animation:enter .3s}
-
-/* multi: top-N slots */
-.slots-wrap{margin-bottom:16px}
-.slots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:8px}
-.slot{min-height:64px;border-radius:14px;display:flex;align-items:center;gap:8px;padding:8px 12px;font-size:12.5px;font-weight:700;text-align:left}
-.slot.empty{border:2px dashed #2f5677;color:#4b6d8c;justify-content:center;font-size:22px;font-family:"Space Grotesk"}
-.slot.full{border:2px solid var(--gold);background:linear-gradient(140deg,#2a2614,#10263d);color:var(--text);cursor:pointer;animation:pop .3s;position:relative}
-.slot.full b{color:var(--gold);font-family:"Space Grotesk";font-size:18px}
-.slot.full .ico{font-size:20px}.slot .sl{flex:1;min-width:0;line-height:1.25}
-.slot .x{opacity:.5;font-size:11px}.slot.wide{grid-column:1/-1;justify-content:center}
-.other-box{margin-top:12px}
-
-/* timeline (first smartphone) */
-.timeline{display:grid;gap:16px}
-.tl-row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));position:relative;padding-top:4px}
-.tl-row::before{content:"";position:absolute;left:10%;right:10%;top:36px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--teal),var(--lav),var(--coral));opacity:.5}
-.tl-node{background:none;border:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:8px;position:relative;color:var(--text);padding:0 2px}
-.tl-dot{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:#0d2238;border:2px solid var(--line);transition:.2s}
-.tl-node:hover .tl-dot{border-color:var(--teal);transform:translateY(-3px)}
-.tl-node[aria-pressed=true] .tl-dot{background:var(--teal);border-color:var(--teal);box-shadow:0 0 0 6px var(--teal-dim);animation:pop .3s}
-.tl-lbl{font-weight:800;font-size:14px;font-family:"Space Grotesk";text-align:center}
-.tl-extra{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-
-/* pulse (frequency) */
-.pulse-tiles{grid-template-columns:repeat(3,minmax(0,1fr))}
-.pulse{display:flex;gap:5px;height:26px;align-items:center}
-.pulse i{width:10px;height:10px;border-radius:50%;background:var(--teal);animation:ping 1.2s infinite ease-in-out}
-@keyframes ping{0%,100%{transform:scale(.6);opacity:.4}50%{transform:scale(1.2);opacity:1}}
-.zz{font-size:22px}
-
-/* meter */
-.meter{display:flex;flex-direction:column;align-items:center}
-.meter-icon{font-size:64px;transition:transform .35s cubic-bezier(.3,1.6,.5,1),filter .35s;margin-bottom:8px}
-.meter-bars{display:flex;align-items:flex-end;gap:10px;height:130px;width:min(520px,100%)}
-.mbar{flex:1;height:var(--h);border-radius:12px 12px 6px 6px;border:2px solid var(--line);background:#0d2238;cursor:pointer;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;padding-top:8px;color:var(--muted);transition:.25s;position:relative}
-.mbar b{font-family:"Space Grotesk";font-size:18px}
-.mbar span{position:absolute;top:calc(100% + 6px);font-size:10.5px;font-weight:700;line-height:1.2;text-align:center;width:110%;color:var(--muted)}
-.mbar:hover{border-color:var(--c)}
-.mbar.lit{background:var(--c);border-color:var(--c);color:#06202a;box-shadow:0 0 16px color-mix(in srgb,var(--c) 60%,transparent)}
-.mbar[aria-pressed=true]{transform:translateY(-4px)}
-.mbar[aria-pressed=true] span{color:var(--text)}
-.meter-val{margin-top:48px;font-family:"Space Grotesk";font-size:22px;font-weight:700;min-height:30px;text-align:center}
-
-/* deck (rating cards) */
-.deck-wrap{display:grid;gap:20px}
-.deck-wrap.has-thermo{grid-template-columns:minmax(0,1fr) 230px;align-items:start}
-.deck-dots{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-bottom:12px}
-.dd{width:12px;height:12px;border-radius:50%;border:0;background:var(--line);cursor:pointer;padding:0}
-.dd.on{background:var(--teal)}.dd.cur{outline:2px solid var(--lav);outline-offset:2px}
-.dcard{border-radius:22px;padding:22px;background:linear-gradient(160deg,#173653,#0e2239);border:1px solid #2f5677;box-shadow:0 18px 40px #0008;animation:cardIn .35s cubic-bezier(.2,.9,.3,1.2)}
-.dcard.out{animation:cardOut .28s forwards}
-@keyframes cardIn{from{opacity:0;transform:translateX(40px) rotate(3deg)}to{opacity:1;transform:none}}
-@keyframes cardOut{to{opacity:0;transform:translateX(-60px) rotate(-4deg)}}
-.dc-top{display:flex;justify-content:space-between;align-items:center}
-.dc-top .emo{font-size:40px}
-.av{display:inline-grid;place-items:center;width:58px;height:58px;border-radius:50%;background:#0b2a3e;border:2px solid var(--line);overflow:hidden}
-.av svg{width:54px;margin-top:12px}
-.dc-text{font-family:"Space Grotesk";font-size:clamp(19px,2.4vw,24px);font-weight:600;line-height:1.3;margin:14px 0 18px}
-.scale{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
-.sb{border:2px solid var(--line);background:#0b1f33;border-radius:14px;padding:10px 4px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;color:var(--text);transition:.15s;min-height:76px}
-.sb b{font-family:"Space Grotesk";font-size:20px;line-height:1.1}
-.sb span{font-size:10.5px;font-weight:700;color:var(--muted);line-height:1.2;text-align:center}
-.sb:hover{border-color:var(--c);transform:translateY(-2px)}
-.sb[aria-pressed=true]{background:var(--c);border-color:var(--c);color:#06202a}
-.sb[aria-pressed=true] span{color:#06202a}
-.scale-ends{display:none;justify-content:space-between;font-size:11px;color:var(--muted);font-weight:700;margin-top:6px}
-.deck-sum{display:grid;gap:8px}
-.sum-h{margin:0 0 6px;color:var(--teal);font-weight:700;font-size:14px}
-.sum-row{display:flex;align-items:center;gap:12px;text-align:left;border:1px solid var(--line);background:#0b1f33;border-radius:14px;padding:8px 12px;cursor:pointer;color:var(--text);animation:enter .3s}
-.sum-row:hover{border-color:var(--teal)}
-.sum-row .emo{font-size:24px}.sum-row .av{width:40px;height:40px}.sum-row .av svg{width:38px;margin-top:8px}
-.sum-row .st{flex:1;font-size:13.5px;font-weight:600}
-.sv{font-size:12px;font-weight:800;padding:5px 10px;border-radius:99px;background:color-mix(in srgb,var(--c) 22%,transparent);color:var(--c);white-space:nowrap;max-width:45%;overflow:hidden;text-overflow:ellipsis}
-
-/* thermometer */
-.thermo{border:1px solid var(--line);border-radius:18px;padding:12px;background:#0a1b2e}
-.th-tube{display:grid;gap:4px}
-.th-lvl{display:grid;grid-template-columns:22px 1fr;align-items:center;gap:4px 8px;padding:6px 8px;border-radius:10px;background:color-mix(in srgb,var(--c) 14%,transparent);border-left:4px solid var(--c);min-height:46px}
-.th-n{font-family:"Space Grotesk";font-weight:700;color:var(--c)}
-.th-l{font-size:11px;font-weight:700;color:var(--muted)}
-.th-tok{grid-column:1/-1;display:flex;gap:4px;flex-wrap:wrap}
-.th-tok:empty{display:none}
-.tok .av{width:34px;height:34px;animation:pop .35s}.tok .av svg{width:32px;margin-top:7px}
-.th-wait{display:flex;gap:4px;justify-content:center;margin-top:10px;min-height:36px;flex-wrap:wrap}
-.th-wait .tok{opacity:.45}.th-wait .tok.ns{opacity:.8;filter:grayscale(1)}
-
-/* seesaw */
-.seesaws{display:grid;gap:22px}
-.ss-row{border:1px solid var(--line);border-radius:20px;padding:16px;background:#0a1b2e}
-.ss-title{font-family:"Space Grotesk";font-weight:700;font-size:18px;text-align:center}
-.ss{width:min(420px,100%);display:block;margin:0 auto}
-.plank{transition:transform .6s cubic-bezier(.3,1.5,.5,1)}
-.plank.wobble{animation:wob 2.4s ease-in-out infinite}
-@keyframes wob{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
-.ss-labels{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;font-weight:800;margin:4px 0 12px}
-.ss-labels .neg{color:var(--coral)}.ss-labels .pos{color:var(--teal)}
-.ss-val{font-family:"Space Grotesk";font-size:14px;text-align:center;color:var(--text)}
-
-/* word association */
-.assoc{min-height:360px}
-.as-intro{text-align:center;padding:10px 0}
-.as-big{font-size:56px}
-.as-intro h2{margin:6px 0}
-.as-intro p{color:var(--muted);max-width:54ch;margin:0 auto 14px}
-.as-prev{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
-.as-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px}
-.as-head{display:flex;justify-content:space-between;align-items:center}
-.ring{width:44px;height:44px}
-.ring .rp{animation:drain 5s linear forwards}
-@keyframes drain{to{stroke-dasharray:0 100;stroke:#F07A86}}
-.as-prompt{font-family:"Space Grotesk";font-weight:700;font-size:clamp(30px,5vw,46px);text-align:center;margin:10px 0 18px}
-.as-prompt .pe{margin-right:10px}
-.as-prompt .pw{background:linear-gradient(90deg,var(--teal),var(--lav));-webkit-background-clip:text;background-clip:text;color:transparent}
-.bubbles{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-.bubble{border:2px solid #2f5677;background:radial-gradient(circle at 30% 30%,#1c4566,#0d2238);color:var(--text);border-radius:99px;padding:12px 18px;font-weight:800;font-size:15px;cursor:pointer;animation:bob 3s ease-in-out infinite;animation-delay:var(--d);transform:rotate(var(--r));transition:opacity .3s,background .2s}
-.bubble:hover{border-color:var(--teal);background:#124348}
-@keyframes bob{50%{translate:0 -6px}}
-.bubble.picked{background:var(--teal);color:#04212a;border-color:var(--teal);animation:pop .4s;transform:scale(1.15)}
-.bubble.fade{opacity:.2;pointer-events:none}
-.as-fb{text-align:center;min-height:28px;margin-top:16px;color:var(--teal);font-weight:700}
-.trail{display:grid;gap:10px;max-width:520px;margin:10px auto 0}
-.tr-row{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap}
-.tr-row .arrow{color:var(--teal)}.tr-w{font-family:"Space Grotesk";font-weight:700;font-size:20px;color:var(--teal)}
-
-/* final word */
-.wish{position:relative;border-radius:20px;padding:18px;background:linear-gradient(140deg,#1d1846,#0d2a40);border:1px solid #3d3a7a;transition:box-shadow .4s}
-.wish.glow{box-shadow:0 0 0 4px #a9a3f526,0 0 30px #a9a3f533}
-.wish-ico{font-size:42px;text-align:center;margin-bottom:8px}
-.wish textarea{width:100%;border-radius:14px;border:1px solid var(--line);background:#081a2e;color:var(--text);font:inherit;padding:14px;resize:vertical;min-height:120px}
-.wish textarea:focus{outline:none;border-color:var(--lav);box-shadow:0 0 0 4px #a9a3f526}
-.wc{text-align:right;margin-top:6px}
-
-/* done: snapshot */
-.snap{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.snap-i{border:1px solid var(--line);border-radius:14px;padding:12px;background:#0b1f33;display:flex;flex-direction:column;gap:2px;animation:enter .5s both}
-.snap-i:nth-child(2){animation-delay:.08s}.snap-i:nth-child(3){animation-delay:.16s}.snap-i:nth-child(4){animation-delay:.24s}.snap-i:nth-child(5){animation-delay:.32s}.snap-i:nth-child(6){animation-delay:.4s}.snap-i:nth-child(7){animation-delay:.48s}
-.snap-i .si{font-size:22px}.snap-i .sl{font-size:11.5px;color:var(--muted);font-weight:700}
-.snap-i b{font-family:"Space Grotesk";font-size:16px;line-height:1.25}
-.lens{display:flex;gap:12px;margin-top:12px;padding:14px;border-radius:14px;background:linear-gradient(120deg,#1d1846,#123247);border:1px solid #3d3a7a}
-.lens span{font-size:26px}.lens p{margin:2px 0 0;font-size:13.5px;color:#dbe4f5}
-.facts{grid-template-columns:repeat(3,minmax(0,1fr))}
-.support{margin-top:18px;padding:14px 16px;border-radius:14px;background:#0a1b2e;border:1px solid var(--line);font-size:14px;color:#cfe0ea}
-.support a{color:var(--teal);font-weight:700}
-
-@media (max-width:980px){
-  .deck-wrap.has-thermo{grid-template-columns:minmax(0,1fr)}
-  .facts{grid-template-columns:minmax(0,1fr)}
-}
-@media (max-width:640px){
-  .jdot{width:26px;height:26px;font-size:11px}
-  .jline{margin:0 2px;min-width:3px}
-  .jnode.now .jlabel{display:none}
-  .slots{grid-template-columns:minmax(0,1fr)}
-  .slot{min-height:48px}
-  .tl-row{grid-template-columns:repeat(5,minmax(0,1fr))}
-  .tl-dot{width:48px;height:48px}
-  .tl-lbl{font-size:12px}
-  .tl-row::before{top:28px}
-  .tl-extra{grid-template-columns:minmax(0,1fr)}
-  .pulse-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .meter-bars{gap:6px}
-  .mbar span{font-size:9.5px}
-  .scale{gap:5px}
-  .sb{padding:8px 2px;min-height:58px}
-  .sb span{display:none}
-  .scale-ends{display:flex}
-  .dcard{padding:18px 14px}
-  .snap{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
-  .bubble{padding:10px 14px;font-size:14px}
-}
-
-.stampc.on{animation:none}.stampc.on.new{animation:stampIn .6s}
-.pc-top{display:flex;gap:16px;align-items:center;margin-top:12px}
-@media (max-width:640px){.pc-top{flex-direction:column;text-align:center}.pc-top .pp-avatar{margin:0 auto!important}}
-
 </style>
 </head>
 <body>
@@ -538,7 +340,7 @@ const CONFIG={
   SUPABASE_URL:"https://xbqtlnjyglanjzjrfbqu.supabase.co",
   SUPABASE_KEY:"sb_publishable_onvCuV21r7p2sgTJyWRqbg_zLBuzBBd",
   TABLE:"survey_responses",
-  SURVEY_VERSION:"3.0",
+  SURVEY_VERSION:"2.0",
   MIN_AGE:13 // under this age: cannot take part
 };
 
@@ -922,7 +724,7 @@ const AGES=[
  {id:"13-15",range:"13–15",gen:"g_alpha",minor:true,av:{skin:"#8D5A3B",hair:"#1b120c",hairStyle:"spiky",top:"#22b8ad",top2:"#178a82",outfit:"hoodie",headphones:"#A9A3F5",prop:"phone",bigSmile:true}},
  {id:"16-17",range:"16–17",gen:"g_z",minor:true,av:{skin:"#F5D3B3",hair:"#d6893c",hairStyle:"longFront",top:"#A9A3F5",top2:"#6d66c9",outfit:"tee",print:"✦",earbuds:true,prop:"phone"}},
  {id:"18-24",range:"18–24",gen:"g_z",av:{skin:"#C68642",hair:"#24170f",hairStyle:"curly",top:"#F09A90",top2:"#13293D",outfit:"tee",print:"IRL",hat:{t:"bucket",c:"#E0BE86",c2:"#c9a46b"},prop:"phone",bigSmile:true}},
- {id:"25-34",range:"25–34",gen:"g_zm",av:{skin:"#E9B98F",hair:"#3a2618",hairStyle:"short",beard:true,top:"#E0BE86",top2:"#a7895c",outfit:"hoodie",hat:{t:"beanie",c:"#22b8ad",c2:"#178a82"},glasses:"#13293D",prop:"laptop"}},
+ {id:"25-34",range:"25–34",gen:"g_mill",av:{skin:"#E9B98F",hair:"#3a2618",hairStyle:"short",beard:true,top:"#E0BE86",top2:"#a7895c",outfit:"hoodie",hat:{t:"beanie",c:"#22b8ad",c2:"#178a82"},glasses:"#13293D",prop:"laptop"}},
  {id:"35-44",range:"35–44",gen:"g_mill",av:{skin:"#6B4226",hair:"#120c08",hairStyle:"bun",top:"#2b5f80",top2:"#1b3a57",outfit:"blazer",earbuds:true,prop:"coffee"}},
  {id:"45-54",range:"45–54",gen:"g_x",av:{skin:"#F1C7A1",hair:"#5b3a22",hairStyle:"side",top:"#4f7fb8",top2:"#3a6496",outfit:"denim",shadesUp:true,neckphones:"#F09A90",prop:"phone"}},
  {id:"55-64",range:"55–64",gen:"g_xb",av:{skin:"#D9A06B",hair:"#9aa3ad",hairStyle:"bob",top:"#8a7bd1",top2:"#5d50a8",outfit:"cardigan",glasses:"#E0BE86",prop:"tablet"}},
@@ -946,287 +748,8 @@ function genderSVG(kind){
 }
 
 /* ============================================================
-   TRANSLATIONS v3 (questionnaire "Part 2"). Merged over T.
+   SURVEY CONTENT
    ============================================================ */
-const T2={
-en:{
- m1:"⏱ ~8 minutes",m2:"🕹 8 levels + bonus game",
- w_text:"Explore your digital identity and reflect on social media: its risks, its bright sides, and how children and young people are protected online in the EU.",
- lv0:"Check-in",lv1:"Your Profile",lv2:"Screen Life",lv3:"Risk Radar",lv4:"Bright Side",lv5:"You & Your Circle",lv6:"Habits",lv7:"The Rules",lv8:"Final Word",
- lv0d:"Age & consent",lv1d:"Build your passport",lv2d:"Phones, apps & time",lv3d:"Spot the risks",lv4d:"The good stuff",lv5d:"Friends & family",lv6d:"Your routines",lv7d:"Have your say",lv8d:"One last idea",
- bonus:"Bonus",bonus_d:"Word association game",g_zm:"Gen Z · Millennial",skipped:"Skipped",
- lu1:"Identity set! Next: your screen life, starting with a quick word game.",lu2:"Screen life scanned. Now switch on your Risk Radar.",lu3:"Radar complete. Time to look at the bright side.",lu4:"Balance found. Next: you and the people around you.",lu5:"Circle mapped. Let’s look at your everyday habits.",lu6:"Habits logged. Now it’s your turn to judge the rules.",lu7:"Votes counted! One last level to go.",lu8:"That’s everything! Submit to unlock your Digital Mind snapshot.",
- q_work:"What kind of work do you mainly do?",wk1:"Mostly at a desk or screen",wk2:"Mostly physical or on the move",wk3:"A mix of both",
- q_ai_freq:"How often do you use AI tools (e.g. ChatGPT, Copilot, Gemini) in your work or studies?",f_never:"Never",f_rarely:"Rarely",f_some:"Sometimes",f_often:"Often",f_vo:"Very often",
- q_ai_conf:"How confident do you feel using AI tools?",sc_conf1:"Not at all confident",sc_conf2:"Slightly confident",sc_conf3:"Moderately confident",sc_conf4:"Very confident",sc_conf5:"Extremely confident",
- q_phone_age:"How old were you when you first started using a smartphone regularly?",pa1:"Under 10",pa2:"10–12",pa3:"13–15",pa4:"16–18",pa5:"Over 18",pa6:"I have never used a smartphone",pa7:"Not sure",
- q_sm_freq:"How often do you use social media?",sf1:"Several times an hour",sf2:"About once an hour",sf3:"Several times a day",sf4:"About once a day",sf5:"Less than once a day",sf6:"Never",
- q_sm_time:"Approximately how much time do you spend on social media each day?",tm1:"Less than 30 minutes",tm2:"30 minutes to 1 hour",tm3:"1–2 hours",tm4:"2–3 hours",tm5:"3–4 hours",tm6:"More than 4 hours",tm7:"Not sure",
- q_neg:"Which of the following do you consider the biggest potential negative effects of social media use?",
- ne1:"Reduced attention and concentration",ne2:"Spending more time than intended / compulsive use",ne3:"Poorer sleep",ne4:"Stress, anxiety or low mood",ne5:"Pressure about appearance and body image",ne6:"Comparing oneself with others / fear of missing out",ne7:"Cyberbullying, hate or harassment",ne8:"Misinformation and fake news",ne9:"AI-generated or manipulated content",ne10:"Misuse of personal data and privacy",ne11:"Exposure to harmful or extreme content",ne12:"Less face-to-face time with family and friends",
- q_aware_before:"Before taking this survey, how aware were you of the potential negative effects of social media use?",sc_aw1:"Not at all aware",sc_aw2:"Slightly aware",sc_aw3:"Moderately aware",sc_aw4:"Very aware",sc_aw5:"Extremely aware",
- q_impact_self:"To what extent do you think social media use can negatively affect the following areas?",
- q_impact_child:"To what extent do you think social media use can negatively affect the following areas for your child?",intro_child:"Now think of your child. If you have more than one child under 18, please think of the one whose birthday comes next.",
- q_impact_close:"To what extent do you think social media use can negatively affect the following areas for someone close to you?",intro_close:"Now think of someone close to you, such as a partner, family member or close friend.",
- it_att:"Attention and concentration",it_well:"Mental well-being",it_self:"Self-esteem and body image",it_sleep:"Sleep quality",it_rel:"Social relationships",it_priv:"Privacy and personal data",it_mis:"Exposure to misinformation",it_comp:"Compulsive or excessive use",
- sc_imp1:"Not at all",sc_imp2:"Slightly",sc_imp3:"Moderately",sc_imp4:"Significantly",sc_imp5:"Extremely",
- x_notsure:"Not sure",x_dontknow:"Don’t know",x_na:"Not applicable",x_child_nouse:"My child does not use social media",x_close_nouse:"This person does not use social media",
- q_experienced:"Have you personally experienced any of the following in connection with social media use?",ex1:"Spending more time on social media than intended",ex2:"Difficulty concentrating after using social media",ex3:"Negative effects on my mood",ex4:"Comparing myself with others",ex5:"Feeling worse about my appearance",ex6:"Disrupted sleep",none_above:"None of the above",
- q_severity:"How severe do you consider the potential negative effects of social media use for each group?",g_you:"Yourself",g_adults:"Adults in general",g_teens:"Adolescents aged 13–17",g_kids:"Children under 13",
- sc_sev1:"Not at all severe",sc_sev2:"Slightly severe",sc_sev3:"Moderately severe",sc_sev4:"Very severe",sc_sev5:"Extremely severe",
- q_activities:"What do you usually do on social media?",ac1:"Watch videos or other entertainment",ac2:"Message friends and family",ac3:"Follow news and current events",ac4:"Learn new skills or look up information",ac5:"Get inspiration (recipes, fitness, travel, fashion, home)",ac6:"Share my own photos, videos or posts",ac7:"Follow creators or influencers",ac8:"Discover products, shopping or reviews",ac9:"Work, networking or career",ac10:"Join communities or groups with shared interests",
- q_benefits:"What do you think are the most valuable benefits of social media?",be1:"Staying in touch with family and friends",be2:"Entertainment and relaxation",be3:"Access to news and information",be4:"Learning and education",be5:"Inspiration and creativity",be6:"Finding communities and a sense of belonging",be7:"Expressing myself",be8:"Career and business opportunities",be9:"Finding support or advice (e.g. health, parenting, peer support)",be10:"Discovering trends, events and new ideas",
- q_balance:"Overall, how do the benefits and negative effects of social media balance out?",b_you:"For you personally",b_kids:"For children and teenagers",
- sc_bal1:"Negative effects clearly outweigh",sc_bal2:"Negative effects slightly outweigh",sc_bal3:"About equal",sc_bal4:"Benefits slightly outweigh",sc_bal5:"Benefits clearly outweigh",side_neg:"Negative effects",side_pos:"Benefits",
- q_circle:"How aware do you think the following people are of the potential risks of social media use?",c_you:"You",c_friends:"Your close friends",c_partner:"Your partner",c_family:"Your parents or older family members",c_parents:"Parents of children and adolescents in general",
- q_together:"What, if anything, do you do together on social media with people close to you (partner, family or friends)?",to1:"Watch content together",to2:"Send each other posts, videos or memes",to3:"Create content together",to4:"Take part in challenges or trends together",to5:"Try out new recipes, workouts or products and review them",to6:"Plan activities, trips or events",to7:"Play games together",to_none:"We don’t use social media together",
- q_agree:"To what extent do you agree with the following statements?",st_closer:"Sharing content on social media brings me closer to the people I care about.",st_far:"Social media helps me stay part of the lives of family and friends who live far away.",
- sc_ag1:"Strongly disagree",sc_ag2:"Disagree",sc_ag3:"Neither agree nor disagree",sc_ag4:"Agree",sc_ag5:"Strongly agree",
- q_reduced:"Have concerns about the potential negative effects of social media ever led you to reduce your own use?",red_cons:"I have considered it but have not reduced my use",
- q_measures:"Which of the following measures do you currently use to manage your social media use?",me1:"Screen-time limits",me2:"Muting or disabling notifications",me3:"Taking breaks from social media",me4:"Unfollowing or muting accounts",me5:"Avoiding social media before bedtime",
- h_n1:"I sometimes spend more time on social media than I intend to.",h_n2:"I find it hard to stop scrolling once I have started.",h_n3:"I feel restless or uneasy when I cannot check social media.",h_n4:"Knowing about the potential risks of social media does not necessarily make me use it less.",h_p1:"Social media helps me keep up with new trends and ideas (e.g. events, recipes, gifts or party ideas).",h_p2:"Social media helps me stay connected with people who matter to me.",h_p3:"Social media inspires me to try new things.",
- q_support:"To what extent do you support the following measures?",s_u13:"Restricting access to social media for children under 13",s_teen:"Introducing additional protective measures for users aged 13–17",s_resp:"Requiring social media platforms to take greater responsibility for protecting young users",s_info:"Requiring social media platforms to provide clearer information about potential risks",s_label:"Requiring social media platforms to clearly label edited or AI-altered images of people",
- sc_sup1:"Strongly oppose",sc_sup2:"Oppose",sc_sup3:"Neither support nor oppose",sc_sup4:"Support",sc_sup5:"Strongly support",
- intro_rules:"Some countries have introduced or proposed laws that restrict children’s access to social media, for example minimum-age rules.",
- q_r_self:"Do you think such restrictions would change your own social media behaviour?",q_r_others:"Do you think such restrictions would change how you manage the social media use of children or other people close to you?",r_sig:"Yes, significantly",r_sli:"Yes, slightly",
- q_final:"What is the most important change needed to make social media healthier and more enjoyable for individuals and society?",final_h:"Optional. A sentence or two is perfect.",final_ph:"My idea is…",send_idea:"Send my idea →",skip:"Skip →",chars:"characters",
- pick_max:"Pick up to {n}.",max_reached:"That’s {n}! Tap one of your picks to swap it.",your_picks:"Your top {n}",specify:"Please specify (optional)",
- deck_hint:"Rate each card. Tip: on a keyboard, press 1–5.",deck_done:"All rated! Tap a card to change your answer.",apply_all:"Applies to all",
- meter_hint:"Tap a level.",seesaw_hint:"Tip the seesaw for each row.",
- as_title:"Bonus game: Word Association",as_intro:"Quick! For each word, tap the FIRST word that comes to mind. Faster answers earn more XP. There are no right answers.",as_play:"Play →",as_skip:"Skip the game",as_round:"Round {n} of 3",as_fast:"⚡ Lightning fast!",as_nice:"Nice pick!",as_trail:"Your word trail",as_again:"Play again",
- ap1:"Social media",ap2:"Smartphone",ap3:"Children online",
- w_connection:"Connection",w_fun:"Fun",w_inspiration:"Inspiration",w_learning:"Learning",w_distraction:"Distraction",w_stress:"Stress",w_addiction:"Addiction",w_danger:"Danger",w_habit:"Habit",w_news:"News",w_time:"Time",w_work:"Work",
- res_title:"Your snapshot",res_apps:"Apps each week",res_phone:"First smartphone",res_time:"Daily social media",res_word:"Your word for social media",res_concern:"Top concern",res_benefit:"Top benefit",res_balance:"Your seesaw",res_lens:"Your lens",
- lens_more:"You rate the risks as more severe for teens than for yourself, one of the patterns this study explores.",lens_same:"You rate the risks for yourself and for teens about the same.",lens_less:"You rate the risks as more severe for yourself than for teens.",
- support_line:"If social media is affecting how you feel, you’re not alone. Find helplines and support at",
- ar_min:"The Digital Minimalist",ar_mind:"You keep social media at arm’s length: a rare view in a connected world.",
- bdW:"Word Wizard",bdR:"Risk Scout",bdL:"Rule Maker",
- d_text:"Your responses have been submitted. Here is your Digital Passport and personal snapshot."
-},
-de:{
- m1:"⏱ ca. 8 Minuten",m2:"🕹 8 Level + Bonusspiel",
- w_text:"Entdecke deine digitale Identität und denke über soziale Medien nach: ihre Risiken, ihre guten Seiten und wie Kinder und Jugendliche in der EU online geschützt werden.",
- lv0:"Check-in",lv1:"Dein Profil",lv2:"Bildschirmleben",lv3:"Risiko-Radar",lv4:"Gute Seiten",lv5:"Du & dein Umfeld",lv6:"Gewohnheiten",lv7:"Die Regeln",lv8:"Letztes Wort",
- lv0d:"Alter & Einwilligung",lv1d:"Gestalte deinen Pass",lv2d:"Handy, Apps & Zeit",lv3d:"Risiken erkennen",lv4d:"Das Positive",lv5d:"Freunde & Familie",lv6d:"Deine Routinen",lv7d:"Deine Meinung",lv8d:"Eine letzte Idee",
- bonus:"Bonus",bonus_d:"Wortassoziationsspiel",g_zm:"Gen Z · Millennial",skipped:"Übersprungen",
- lu1:"Identität gespeichert! Weiter geht’s mit deinem Bildschirmleben – mit einem schnellen Wortspiel.",lu2:"Bildschirmleben gescannt. Jetzt schalte dein Risiko-Radar ein.",lu3:"Radar komplett. Zeit für die guten Seiten.",lu4:"Gleichgewicht gefunden. Weiter: du und die Menschen um dich herum.",lu5:"Umfeld kartiert. Schauen wir uns deine Alltagsgewohnheiten an.",lu6:"Gewohnheiten erfasst. Jetzt bewertest du die Regeln.",lu7:"Stimmen gezählt! Nur noch ein Level.",lu8:"Das war alles! Sende ab, um deinen Digital-Mind-Schnappschuss freizuschalten.",
- q_work:"Welche Art von Arbeit machst du hauptsächlich?",wk1:"Überwiegend am Schreibtisch oder Bildschirm",wk2:"Überwiegend körperlich oder unterwegs",wk3:"Eine Mischung aus beidem",
- q_ai_freq:"Wie oft nutzt du KI-Tools (z. B. ChatGPT, Copilot, Gemini) bei der Arbeit oder im Studium?",f_never:"Nie",f_rarely:"Selten",f_some:"Manchmal",f_often:"Oft",f_vo:"Sehr oft",
- q_ai_conf:"Wie sicher fühlst du dich im Umgang mit KI-Tools?",sc_conf1:"Überhaupt nicht sicher",sc_conf2:"Etwas sicher",sc_conf3:"Mäßig sicher",sc_conf4:"Sehr sicher",sc_conf5:"Äußerst sicher",
- q_phone_age:"Wie alt warst du, als du angefangen hast, regelmäßig ein Smartphone zu nutzen?",pa1:"Unter 10",pa2:"10–12",pa3:"13–15",pa4:"16–18",pa5:"Über 18",pa6:"Ich habe nie ein Smartphone benutzt",pa7:"Weiß nicht genau",
- q_sm_freq:"Wie oft nutzt du soziale Medien?",sf1:"Mehrmals pro Stunde",sf2:"Etwa einmal pro Stunde",sf3:"Mehrmals am Tag",sf4:"Etwa einmal am Tag",sf5:"Seltener als einmal am Tag",sf6:"Nie",
- q_sm_time:"Wie viel Zeit verbringst du ungefähr täglich mit sozialen Medien?",tm1:"Weniger als 30 Minuten",tm2:"30 Minuten bis 1 Stunde",tm3:"1–2 Stunden",tm4:"2–3 Stunden",tm5:"3–4 Stunden",tm6:"Mehr als 4 Stunden",tm7:"Weiß nicht genau",
- q_neg:"Was hältst du für die größten möglichen negativen Folgen der Nutzung sozialer Medien?",
- ne1:"Weniger Aufmerksamkeit und Konzentration",ne2:"Mehr Zeit als geplant / zwanghafte Nutzung",ne3:"Schlechterer Schlaf",ne4:"Stress, Angst oder gedrückte Stimmung",ne5:"Druck in Bezug auf Aussehen und Körperbild",ne6:"Vergleich mit anderen / Angst, etwas zu verpassen",ne7:"Cybermobbing, Hass oder Belästigung",ne8:"Desinformation und Fake News",ne9:"KI-generierte oder manipulierte Inhalte",ne10:"Missbrauch persönlicher Daten und der Privatsphäre",ne11:"Kontakt mit schädlichen oder extremen Inhalten",ne12:"Weniger persönliche Zeit mit Familie und Freunden",
- q_aware_before:"Wie bewusst waren dir vor dieser Umfrage die möglichen negativen Folgen sozialer Medien?",sc_aw1:"Überhaupt nicht bewusst",sc_aw2:"Etwas bewusst",sc_aw3:"Mäßig bewusst",sc_aw4:"Sehr bewusst",sc_aw5:"Äußerst bewusst",
- q_impact_self:"Inwieweit kann die Nutzung sozialer Medien deiner Meinung nach die folgenden Bereiche negativ beeinflussen?",
- q_impact_child:"Inwieweit kann die Nutzung sozialer Medien deiner Meinung nach die folgenden Bereiche bei deinem Kind negativ beeinflussen?",intro_child:"Denke jetzt an dein Kind. Wenn du mehr als ein Kind unter 18 hast, denke bitte an das Kind, das als Nächstes Geburtstag hat.",
- q_impact_close:"Inwieweit kann die Nutzung sozialer Medien deiner Meinung nach die folgenden Bereiche bei einer dir nahestehenden Person negativ beeinflussen?",intro_close:"Denke jetzt an eine dir nahestehende Person, z. B. Partner:in, ein Familienmitglied oder eine enge Freundin bzw. einen engen Freund.",
- it_att:"Aufmerksamkeit und Konzentration",it_well:"Psychisches Wohlbefinden",it_self:"Selbstwert und Körperbild",it_sleep:"Schlafqualität",it_rel:"Soziale Beziehungen",it_priv:"Privatsphäre und persönliche Daten",it_mis:"Kontakt mit Desinformation",it_comp:"Zwanghafte oder übermäßige Nutzung",
- sc_imp1:"Überhaupt nicht",sc_imp2:"Etwas",sc_imp3:"Mäßig",sc_imp4:"Deutlich",sc_imp5:"Extrem",
- x_notsure:"Weiß nicht genau",x_dontknow:"Weiß nicht",x_na:"Trifft nicht zu",x_child_nouse:"Mein Kind nutzt keine sozialen Medien",x_close_nouse:"Diese Person nutzt keine sozialen Medien",
- q_experienced:"Hast du selbst schon Folgendes im Zusammenhang mit sozialen Medien erlebt?",ex1:"Mehr Zeit in sozialen Medien verbracht als geplant",ex2:"Konzentrationsprobleme nach der Nutzung sozialer Medien",ex3:"Negative Auswirkungen auf meine Stimmung",ex4:"Mich mit anderen verglichen",ex5:"Mich wegen meines Aussehens schlechter gefühlt",ex6:"Gestörter Schlaf",none_above:"Nichts davon",
- q_severity:"Wie schwerwiegend schätzt du die möglichen negativen Folgen sozialer Medien für jede Gruppe ein?",g_you:"Du selbst",g_adults:"Erwachsene allgemein",g_teens:"Jugendliche (13–17 Jahre)",g_kids:"Kinder unter 13",
- sc_sev1:"Überhaupt nicht schwerwiegend",sc_sev2:"Etwas schwerwiegend",sc_sev3:"Mäßig schwerwiegend",sc_sev4:"Sehr schwerwiegend",sc_sev5:"Äußerst schwerwiegend",
- q_activities:"Was machst du normalerweise in sozialen Medien?",ac1:"Videos oder andere Unterhaltung anschauen",ac2:"Mit Freunden und Familie schreiben",ac3:"Nachrichten und aktuelle Ereignisse verfolgen",ac4:"Neues lernen oder Informationen suchen",ac5:"Mich inspirieren lassen (Rezepte, Fitness, Reisen, Mode, Wohnen)",ac6:"Eigene Fotos, Videos oder Beiträge teilen",ac7:"Creator:innen oder Influencer:innen folgen",ac8:"Produkte, Shopping oder Bewertungen entdecken",ac9:"Arbeit, Networking oder Karriere",ac10:"Communities oder Gruppen mit gemeinsamen Interessen beitreten",
- q_benefits:"Was sind deiner Meinung nach die wertvollsten Vorteile sozialer Medien?",be1:"Kontakt mit Familie und Freunden halten",be2:"Unterhaltung und Entspannung",be3:"Zugang zu Nachrichten und Informationen",be4:"Lernen und Bildung",be5:"Inspiration und Kreativität",be6:"Communities und Zugehörigkeit finden",be7:"Mich selbst ausdrücken",be8:"Berufliche und geschäftliche Chancen",be9:"Unterstützung oder Rat finden (z. B. Gesundheit, Erziehung, Peer-Support)",be10:"Trends, Events und neue Ideen entdecken",
- q_balance:"Wie verhalten sich Vorteile und negative Folgen sozialer Medien insgesamt zueinander?",b_you:"Für dich persönlich",b_kids:"Für Kinder und Jugendliche",
- sc_bal1:"Negative Folgen überwiegen deutlich",sc_bal2:"Negative Folgen überwiegen leicht",sc_bal3:"Etwa ausgeglichen",sc_bal4:"Vorteile überwiegen leicht",sc_bal5:"Vorteile überwiegen deutlich",side_neg:"Negative Folgen",side_pos:"Vorteile",
- q_circle:"Wie bewusst sind sich die folgenden Personen deiner Meinung nach der möglichen Risiken sozialer Medien?",c_you:"Du",c_friends:"Deine engen Freund:innen",c_partner:"Dein:e Partner:in",c_family:"Deine Eltern oder ältere Familienmitglieder",c_parents:"Eltern von Kindern und Jugendlichen allgemein",
- q_together:"Was machst du – wenn überhaupt – in sozialen Medien gemeinsam mit nahestehenden Menschen (Partner:in, Familie oder Freunde)?",to1:"Gemeinsam Inhalte anschauen",to2:"Uns gegenseitig Beiträge, Videos oder Memes schicken",to3:"Gemeinsam Inhalte erstellen",to4:"Gemeinsam bei Challenges oder Trends mitmachen",to5:"Neue Rezepte, Workouts oder Produkte ausprobieren und bewerten",to6:"Aktivitäten, Reisen oder Events planen",to7:"Gemeinsam spielen",to_none:"Wir nutzen soziale Medien nicht gemeinsam",
- q_agree:"Inwieweit stimmst du den folgenden Aussagen zu?",st_closer:"Inhalte in sozialen Medien zu teilen bringt mich den Menschen näher, die mir wichtig sind.",st_far:"Soziale Medien helfen mir, am Leben von Familie und Freunden teilzuhaben, die weit weg wohnen.",
- sc_ag1:"Stimme überhaupt nicht zu",sc_ag2:"Stimme nicht zu",sc_ag3:"Weder noch",sc_ag4:"Stimme zu",sc_ag5:"Stimme voll und ganz zu",
- q_reduced:"Haben Sorgen über mögliche negative Folgen sozialer Medien dich schon einmal dazu gebracht, deine Nutzung zu reduzieren?",red_cons:"Ich habe darüber nachgedacht, sie aber nicht reduziert",
- q_measures:"Welche der folgenden Maßnahmen nutzt du derzeit, um deine Social-Media-Nutzung zu steuern?",me1:"Bildschirmzeit-Limits",me2:"Benachrichtigungen stummschalten oder deaktivieren",me3:"Pausen von sozialen Medien",me4:"Konten entfolgen oder stummschalten",me5:"Soziale Medien vor dem Schlafengehen meiden",
- h_n1:"Ich verbringe manchmal mehr Zeit in sozialen Medien, als ich vorhabe.",h_n2:"Es fällt mir schwer, mit dem Scrollen aufzuhören, wenn ich einmal angefangen habe.",h_n3:"Ich fühle mich unruhig oder unwohl, wenn ich nicht in soziale Medien schauen kann.",h_n4:"Das Wissen um mögliche Risiken sozialer Medien führt nicht unbedingt dazu, dass ich sie weniger nutze.",h_p1:"Soziale Medien helfen mir, mit neuen Trends und Ideen Schritt zu halten (z. B. Events, Rezepte, Geschenke oder Partyideen).",h_p2:"Soziale Medien helfen mir, mit Menschen verbunden zu bleiben, die mir wichtig sind.",h_p3:"Soziale Medien inspirieren mich, Neues auszuprobieren.",
- q_support:"Inwieweit unterstützt du die folgenden Maßnahmen?",s_u13:"Den Zugang zu sozialen Medien für Kinder unter 13 einschränken",s_teen:"Zusätzliche Schutzmaßnahmen für Nutzer:innen von 13–17 Jahren einführen",s_resp:"Plattformen verpflichten, mehr Verantwortung für den Schutz junger Nutzer:innen zu übernehmen",s_info:"Plattformen verpflichten, klarer über mögliche Risiken zu informieren",s_label:"Plattformen verpflichten, bearbeitete oder KI-veränderte Bilder von Menschen deutlich zu kennzeichnen",
- sc_sup1:"Lehne stark ab",sc_sup2:"Lehne ab",sc_sup3:"Weder noch",sc_sup4:"Unterstütze",sc_sup5:"Unterstütze stark",
- intro_rules:"Einige Länder haben Gesetze eingeführt oder vorgeschlagen, die den Zugang von Kindern zu sozialen Medien einschränken, zum Beispiel durch Mindestaltersregeln.",
- q_r_self:"Glaubst du, dass solche Einschränkungen dein eigenes Verhalten in sozialen Medien verändern würden?",q_r_others:"Glaubst du, dass solche Einschränkungen verändern würden, wie du die Social-Media-Nutzung von Kindern oder anderen nahestehenden Menschen begleitest?",r_sig:"Ja, deutlich",r_sli:"Ja, etwas",
- q_final:"Was ist die wichtigste Veränderung, damit soziale Medien für Einzelne und die Gesellschaft gesünder und angenehmer werden?",final_h:"Optional. Ein oder zwei Sätze sind perfekt.",final_ph:"Meine Idee ist …",send_idea:"Idee senden →",skip:"Überspringen →",chars:"Zeichen",
- pick_max:"Wähle bis zu {n}.",max_reached:"Das sind {n}! Tippe auf eine Auswahl, um sie zu tauschen.",your_picks:"Deine Top {n}",specify:"Bitte angeben (optional)",
- deck_hint:"Bewerte jede Karte. Tipp: Auf der Tastatur gehen auch 1–5.",deck_done:"Alles bewertet! Tippe auf eine Karte, um deine Antwort zu ändern.",apply_all:"Gilt für alle",
- meter_hint:"Tippe auf eine Stufe.",seesaw_hint:"Bringe die Wippe für jede Zeile ins Gleichgewicht.",
- as_title:"Bonusspiel: Wortassoziation",as_intro:"Schnell! Tippe bei jedem Begriff auf das ERSTE Wort, das dir in den Sinn kommt. Schnelle Antworten bringen mehr XP. Es gibt keine richtigen Antworten.",as_play:"Los geht’s →",as_skip:"Spiel überspringen",as_round:"Runde {n} von 3",as_fast:"⚡ Blitzschnell!",as_nice:"Gute Wahl!",as_trail:"Deine Wortspur",as_again:"Nochmal spielen",
- ap1:"Soziale Medien",ap2:"Smartphone",ap3:"Kinder im Internet",
- w_connection:"Verbindung",w_fun:"Spaß",w_inspiration:"Inspiration",w_learning:"Lernen",w_distraction:"Ablenkung",w_stress:"Stress",w_addiction:"Sucht",w_danger:"Gefahr",w_habit:"Gewohnheit",w_news:"Nachrichten",w_time:"Zeit",w_work:"Arbeit",
- res_title:"Dein Schnappschuss",res_apps:"Apps pro Woche",res_phone:"Erstes Smartphone",res_time:"Soziale Medien pro Tag",res_word:"Dein Wort für soziale Medien",res_concern:"Größte Sorge",res_benefit:"Größter Vorteil",res_balance:"Deine Wippe",res_lens:"Deine Perspektive",
- lens_more:"Du schätzt die Risiken für Jugendliche schwerwiegender ein als für dich selbst – eines der Muster, die diese Studie untersucht.",lens_same:"Du schätzt die Risiken für dich und für Jugendliche etwa gleich ein.",lens_less:"Du schätzt die Risiken für dich schwerwiegender ein als für Jugendliche.",
- support_line:"Wenn soziale Medien deine Stimmung belasten, bist du nicht allein. Hilfe und Beratungsstellen findest du unter",
- ar_min:"Der digitale Minimalist",ar_mind:"Du hältst soziale Medien auf Abstand – eine seltene Sicht in einer vernetzten Welt.",
- bdW:"Wortzauberer",bdR:"Risiko-Scout",bdL:"Regelmacher",
- d_text:"Deine Antworten wurden übermittelt. Hier sind dein Digitaler Pass und dein persönlicher Schnappschuss."
-},
-fr:{
- m1:"⏱ ~8 minutes",m2:"🕹 8 niveaux + jeu bonus",
- w_text:"Explore ton identité numérique et réfléchis aux réseaux sociaux : leurs risques, leurs bons côtés et la protection des enfants et des jeunes en ligne dans l’UE.",
- lv0:"Enregistrement",lv1:"Ton profil",lv2:"Vie d’écran",lv3:"Radar des risques",lv4:"Bons côtés",lv5:"Toi & ton entourage",lv6:"Habitudes",lv7:"Les règles",lv8:"Le mot de la fin",
- lv0d:"Âge & consentement",lv1d:"Crée ton passeport",lv2d:"Téléphone, applis & temps",lv3d:"Repère les risques",lv4d:"Le positif",lv5d:"Amis & famille",lv6d:"Tes routines",lv7d:"Donne ton avis",lv8d:"Une dernière idée",
- bonus:"Bonus",bonus_d:"Jeu d’associations de mots",g_zm:"Gen Z · Millennial",skipped:"Passé",
- lu1:"Identité enregistrée ! Prochaine étape : ta vie d’écran, en commençant par un petit jeu de mots.",lu2:"Vie d’écran scannée. Allume maintenant ton radar des risques.",lu3:"Radar complet. Place aux bons côtés.",lu4:"Équilibre trouvé. Ensuite : toi et ton entourage.",lu5:"Entourage cartographié. Passons à tes habitudes du quotidien.",lu6:"Habitudes enregistrées. À toi de juger les règles.",lu7:"Votes comptés ! Plus qu’un niveau.",lu8:"C’est tout ! Envoie pour débloquer ton instantané Digital Mind.",
- q_work:"Quel type de travail fais-tu principalement ?",wk1:"Surtout au bureau ou devant un écran",wk2:"Surtout physique ou en déplacement",wk3:"Un mélange des deux",
- q_ai_freq:"À quelle fréquence utilises-tu des outils d’IA (ex. ChatGPT, Copilot, Gemini) pour ton travail ou tes études ?",f_never:"Jamais",f_rarely:"Rarement",f_some:"Parfois",f_often:"Souvent",f_vo:"Très souvent",
- q_ai_conf:"À quel point te sens-tu à l’aise avec les outils d’IA ?",sc_conf1:"Pas du tout à l’aise",sc_conf2:"Un peu à l’aise",sc_conf3:"Moyennement à l’aise",sc_conf4:"Très à l’aise",sc_conf5:"Extrêmement à l’aise",
- q_phone_age:"Quel âge avais-tu quand tu as commencé à utiliser régulièrement un smartphone ?",pa1:"Moins de 10 ans",pa2:"10–12 ans",pa3:"13–15 ans",pa4:"16–18 ans",pa5:"Plus de 18 ans",pa6:"Je n’ai jamais utilisé de smartphone",pa7:"Je ne sais pas",
- q_sm_freq:"À quelle fréquence utilises-tu les réseaux sociaux ?",sf1:"Plusieurs fois par heure",sf2:"Environ une fois par heure",sf3:"Plusieurs fois par jour",sf4:"Environ une fois par jour",sf5:"Moins d’une fois par jour",sf6:"Jamais",
- q_sm_time:"Combien de temps passes-tu environ chaque jour sur les réseaux sociaux ?",tm1:"Moins de 30 minutes",tm2:"30 minutes à 1 heure",tm3:"1–2 heures",tm4:"2–3 heures",tm5:"3–4 heures",tm6:"Plus de 4 heures",tm7:"Je ne sais pas",
- q_neg:"Selon toi, quels sont les principaux effets négatifs potentiels des réseaux sociaux ?",
- ne1:"Baisse de l’attention et de la concentration",ne2:"Y passer plus de temps que prévu / usage compulsif",ne3:"Moins bon sommeil",ne4:"Stress, anxiété ou moral en baisse",ne5:"Pression sur l’apparence et l’image du corps",ne6:"Se comparer aux autres / peur de rater quelque chose",ne7:"Cyberharcèlement, haine ou harcèlement",ne8:"Désinformation et fake news",ne9:"Contenus générés ou manipulés par l’IA",ne10:"Mauvaise utilisation des données personnelles et de la vie privée",ne11:"Exposition à des contenus nuisibles ou extrêmes",ne12:"Moins de temps en face à face avec la famille et les amis",
- q_aware_before:"Avant cette enquête, à quel point étais-tu conscient·e des effets négatifs potentiels des réseaux sociaux ?",sc_aw1:"Pas du tout conscient·e",sc_aw2:"Un peu conscient·e",sc_aw3:"Moyennement conscient·e",sc_aw4:"Très conscient·e",sc_aw5:"Extrêmement conscient·e",
- q_impact_self:"Dans quelle mesure penses-tu que les réseaux sociaux peuvent nuire aux domaines suivants ?",
- q_impact_child:"Dans quelle mesure penses-tu que les réseaux sociaux peuvent nuire aux domaines suivants chez ton enfant ?",intro_child:"Pense maintenant à ton enfant. Si tu as plus d’un enfant de moins de 18 ans, pense à celui dont l’anniversaire arrive en premier.",
- q_impact_close:"Dans quelle mesure penses-tu que les réseaux sociaux peuvent nuire aux domaines suivants chez une personne proche ?",intro_close:"Pense maintenant à une personne proche : partenaire, membre de ta famille ou ami·e proche.",
- it_att:"Attention et concentration",it_well:"Bien-être mental",it_self:"Estime de soi et image du corps",it_sleep:"Qualité du sommeil",it_rel:"Relations sociales",it_priv:"Vie privée et données personnelles",it_mis:"Exposition à la désinformation",it_comp:"Usage compulsif ou excessif",
- sc_imp1:"Pas du tout",sc_imp2:"Un peu",sc_imp3:"Moyennement",sc_imp4:"Beaucoup",sc_imp5:"Énormément",
- x_notsure:"Je ne sais pas",x_dontknow:"Je ne sais pas",x_na:"Non applicable",x_child_nouse:"Mon enfant n’utilise pas les réseaux sociaux",x_close_nouse:"Cette personne n’utilise pas les réseaux sociaux",
- q_experienced:"As-tu personnellement vécu l’une des situations suivantes liées aux réseaux sociaux ?",ex1:"Passer plus de temps que prévu sur les réseaux sociaux",ex2:"Difficulté à se concentrer après les avoir utilisés",ex3:"Effets négatifs sur mon humeur",ex4:"Me comparer aux autres",ex5:"Me sentir moins bien par rapport à mon apparence",ex6:"Sommeil perturbé",none_above:"Aucune de ces situations",
- q_severity:"À quel point considères-tu graves les effets négatifs potentiels des réseaux sociaux pour chaque groupe ?",g_you:"Toi-même",g_adults:"Les adultes en général",g_teens:"Les adolescents de 13 à 17 ans",g_kids:"Les enfants de moins de 13 ans",
- sc_sev1:"Pas du tout grave",sc_sev2:"Un peu grave",sc_sev3:"Moyennement grave",sc_sev4:"Très grave",sc_sev5:"Extrêmement grave",
- q_activities:"Que fais-tu habituellement sur les réseaux sociaux ?",ac1:"Regarder des vidéos ou d’autres divertissements",ac2:"Écrire à mes amis et ma famille",ac3:"Suivre l’actualité",ac4:"Apprendre de nouvelles choses ou chercher des infos",ac5:"Trouver de l’inspiration (recettes, sport, voyages, mode, maison)",ac6:"Partager mes photos, vidéos ou posts",ac7:"Suivre des créateurs ou influenceurs",ac8:"Découvrir des produits, du shopping ou des avis",ac9:"Travail, réseau ou carrière",ac10:"Rejoindre des communautés ou groupes d’intérêt",
- q_benefits:"Selon toi, quels sont les avantages les plus précieux des réseaux sociaux ?",be1:"Rester en contact avec la famille et les amis",be2:"Divertissement et détente",be3:"Accès à l’actualité et à l’information",be4:"Apprentissage et éducation",be5:"Inspiration et créativité",be6:"Trouver des communautés et un sentiment d’appartenance",be7:"M’exprimer",be8:"Opportunités professionnelles et commerciales",be9:"Trouver du soutien ou des conseils (ex. santé, parentalité, entraide)",be10:"Découvrir des tendances, des événements et de nouvelles idées",
- q_balance:"Globalement, comment s’équilibrent les avantages et les effets négatifs des réseaux sociaux ?",b_you:"Pour toi personnellement",b_kids:"Pour les enfants et les adolescents",
- sc_bal1:"Les effets négatifs l’emportent nettement",sc_bal2:"Les effets négatifs l’emportent légèrement",sc_bal3:"À peu près équilibré",sc_bal4:"Les avantages l’emportent légèrement",sc_bal5:"Les avantages l’emportent nettement",side_neg:"Effets négatifs",side_pos:"Avantages",
- q_circle:"À quel point penses-tu que les personnes suivantes sont conscientes des risques potentiels des réseaux sociaux ?",c_you:"Toi",c_friends:"Tes amis proches",c_partner:"Ton/ta partenaire",c_family:"Tes parents ou membres plus âgés de ta famille",c_parents:"Les parents d’enfants et d’adolescents en général",
- q_together:"Que fais-tu, le cas échéant, sur les réseaux sociaux avec tes proches (partenaire, famille ou amis) ?",to1:"Regarder des contenus ensemble",to2:"S’envoyer des posts, vidéos ou mèmes",to3:"Créer des contenus ensemble",to4:"Participer ensemble à des défis ou tendances",to5:"Tester des recettes, entraînements ou produits et les évaluer",to6:"Planifier des activités, voyages ou événements",to7:"Jouer ensemble",to_none:"Nous n’utilisons pas les réseaux sociaux ensemble",
- q_agree:"Dans quelle mesure es-tu d’accord avec les affirmations suivantes ?",st_closer:"Partager des contenus sur les réseaux sociaux me rapproche des personnes qui comptent pour moi.",st_far:"Les réseaux sociaux m’aident à rester présent·e dans la vie de ma famille et de mes amis qui vivent loin.",
- sc_ag1:"Pas du tout d’accord",sc_ag2:"Pas d’accord",sc_ag3:"Ni d’accord ni pas d’accord",sc_ag4:"D’accord",sc_ag5:"Tout à fait d’accord",
- q_reduced:"Des inquiétudes sur les effets négatifs potentiels des réseaux sociaux t’ont-elles déjà amené·e à réduire ton usage ?",red_cons:"J’y ai pensé mais je ne l’ai pas réduit",
- q_measures:"Quelles mesures utilises-tu actuellement pour gérer ton usage des réseaux sociaux ?",me1:"Limites de temps d’écran",me2:"Couper ou désactiver les notifications",me3:"Faire des pauses",me4:"Ne plus suivre ou masquer des comptes",me5:"Éviter les réseaux sociaux avant de dormir",
- h_n1:"Je passe parfois plus de temps sur les réseaux sociaux que prévu.",h_n2:"J’ai du mal à arrêter de scroller une fois que j’ai commencé.",h_n3:"Je me sens agité·e ou mal à l’aise quand je ne peux pas consulter les réseaux sociaux.",h_n4:"Connaître les risques potentiels des réseaux sociaux ne me pousse pas forcément à moins les utiliser.",h_p1:"Les réseaux sociaux m’aident à suivre les nouvelles tendances et idées (ex. événements, recettes, cadeaux ou idées de fête).",h_p2:"Les réseaux sociaux m’aident à rester en lien avec les personnes qui comptent pour moi.",h_p3:"Les réseaux sociaux m’inspirent à essayer de nouvelles choses.",
- q_support:"Dans quelle mesure soutiens-tu les mesures suivantes ?",s_u13:"Restreindre l’accès aux réseaux sociaux pour les enfants de moins de 13 ans",s_teen:"Mettre en place des protections supplémentaires pour les 13–17 ans",s_resp:"Obliger les plateformes à assumer davantage de responsabilité dans la protection des jeunes",s_info:"Obliger les plateformes à informer plus clairement sur les risques potentiels",s_label:"Obliger les plateformes à signaler clairement les images de personnes retouchées ou modifiées par l’IA",
- sc_sup1:"Totalement contre",sc_sup2:"Contre",sc_sup3:"Ni pour ni contre",sc_sup4:"Pour",sc_sup5:"Totalement pour",
- intro_rules:"Certains pays ont adopté ou proposé des lois qui restreignent l’accès des enfants aux réseaux sociaux, par exemple des règles d’âge minimum.",
- q_r_self:"Penses-tu que de telles restrictions changeraient ton propre comportement sur les réseaux sociaux ?",q_r_others:"Penses-tu que de telles restrictions changeraient ta façon d’encadrer l’usage des réseaux sociaux des enfants ou d’autres proches ?",r_sig:"Oui, beaucoup",r_sli:"Oui, un peu",
- q_final:"Quel est le changement le plus important pour rendre les réseaux sociaux plus sains et plus agréables pour chacun et pour la société ?",final_h:"Facultatif. Une ou deux phrases suffisent.",final_ph:"Mon idée, c’est…",send_idea:"Envoyer mon idée →",skip:"Passer →",chars:"caractères",
- pick_max:"Choisis jusqu’à {n}.",max_reached:"Ça fait {n} ! Touche un de tes choix pour l’échanger.",your_picks:"Ton top {n}",specify:"Précise (facultatif)",
- deck_hint:"Évalue chaque carte. Astuce : au clavier, appuie sur 1–5.",deck_done:"Tout est évalué ! Touche une carte pour modifier ta réponse.",apply_all:"S’applique à tout",
- meter_hint:"Touche un niveau.",seesaw_hint:"Fais pencher la balançoire pour chaque ligne.",
- as_title:"Jeu bonus : associations de mots",as_intro:"Vite ! Pour chaque mot, touche le PREMIER mot qui te vient à l’esprit. Plus tu es rapide, plus tu gagnes d’XP. Il n’y a pas de bonne réponse.",as_play:"Jouer →",as_skip:"Passer le jeu",as_round:"Manche {n} sur 3",as_fast:"⚡ Ultra rapide !",as_nice:"Bien vu !",as_trail:"Ta piste de mots",as_again:"Rejouer",
- ap1:"Réseaux sociaux",ap2:"Smartphone",ap3:"Enfants en ligne",
- w_connection:"Lien",w_fun:"Plaisir",w_inspiration:"Inspiration",w_learning:"Apprendre",w_distraction:"Distraction",w_stress:"Stress",w_addiction:"Addiction",w_danger:"Danger",w_habit:"Habitude",w_news:"Actualité",w_time:"Temps",w_work:"Travail",
- res_title:"Ton instantané",res_apps:"Applis par semaine",res_phone:"Premier smartphone",res_time:"Réseaux sociaux par jour",res_word:"Ton mot pour les réseaux sociaux",res_concern:"Inquiétude n°1",res_benefit:"Avantage n°1",res_balance:"Ta balançoire",res_lens:"Ton regard",
- lens_more:"Tu juges les risques plus graves pour les ados que pour toi-même, l’un des phénomènes étudiés ici.",lens_same:"Tu juges les risques à peu près pareils pour toi et pour les ados.",lens_less:"Tu juges les risques plus graves pour toi que pour les ados.",
- support_line:"Si les réseaux sociaux affectent ton moral, tu n’es pas seul·e. Trouve des lignes d’écoute et du soutien sur",
- ar_min:"Le minimaliste numérique",ar_mind:"Tu gardes les réseaux sociaux à distance : un regard rare dans un monde connecté.",
- bdW:"Magicien des mots",bdR:"Éclaireur des risques",bdL:"Faiseur de règles",
- d_text:"Tes réponses ont été envoyées. Voici ton passeport numérique et ton instantané personnel."
-},
-it:{
- m1:"⏱ ~8 minuti",m2:"🕹 8 livelli + gioco bonus",
- w_text:"Esplora la tua identità digitale e rifletti sui social media: i rischi, i lati positivi e come bambini e ragazzi sono protetti online nell’UE.",
- lv0:"Check-in",lv1:"Il tuo profilo",lv2:"Vita da schermo",lv3:"Radar dei rischi",lv4:"Lato positivo",lv5:"Tu e la tua cerchia",lv6:"Abitudini",lv7:"Le regole",lv8:"L’ultima parola",
- lv0d:"Età e consenso",lv1d:"Crea il tuo passaporto",lv2d:"Telefono, app e tempo",lv3d:"Individua i rischi",lv4d:"Il buono",lv5d:"Amici e famiglia",lv6d:"Le tue routine",lv7d:"Di’ la tua",lv8d:"Un’ultima idea",
- bonus:"Bonus",bonus_d:"Gioco di associazione di parole",g_zm:"Gen Z · Millennial",skipped:"Saltato",
- lu1:"Identità salvata! Ora: la tua vita da schermo, a partire da un veloce gioco di parole.",lu2:"Vita da schermo scansionata. Ora accendi il tuo radar dei rischi.",lu3:"Radar completo. È il momento del lato positivo.",lu4:"Equilibrio trovato. Ora: tu e le persone intorno a te.",lu5:"Cerchia mappata. Guardiamo le tue abitudini quotidiane.",lu6:"Abitudini registrate. Ora tocca a te giudicare le regole.",lu7:"Voti contati! Manca solo un livello.",lu8:"È tutto! Invia per sbloccare la tua istantanea Digital Mind.",
- q_work:"Che tipo di lavoro svolgi principalmente?",wk1:"Soprattutto alla scrivania o allo schermo",wk2:"Soprattutto fisico o in movimento",wk3:"Un mix di entrambi",
- q_ai_freq:"Quanto spesso usi strumenti di IA (es. ChatGPT, Copilot, Gemini) per lavoro o studio?",f_never:"Mai",f_rarely:"Raramente",f_some:"A volte",f_often:"Spesso",f_vo:"Molto spesso",
- q_ai_conf:"Quanto ti senti sicuro/a nell’usare strumenti di IA?",sc_conf1:"Per niente sicuro/a",sc_conf2:"Poco sicuro/a",sc_conf3:"Abbastanza sicuro/a",sc_conf4:"Molto sicuro/a",sc_conf5:"Estremamente sicuro/a",
- q_phone_age:"Quanti anni avevi quando hai iniziato a usare regolarmente uno smartphone?",pa1:"Meno di 10",pa2:"10–12",pa3:"13–15",pa4:"16–18",pa5:"Più di 18",pa6:"Non ho mai usato uno smartphone",pa7:"Non sono sicuro/a",
- q_sm_freq:"Quanto spesso usi i social media?",sf1:"Più volte all’ora",sf2:"Circa una volta all’ora",sf3:"Più volte al giorno",sf4:"Circa una volta al giorno",sf5:"Meno di una volta al giorno",sf6:"Mai",
- q_sm_time:"Quanto tempo passi all’incirca ogni giorno sui social media?",tm1:"Meno di 30 minuti",tm2:"Da 30 minuti a 1 ora",tm3:"1–2 ore",tm4:"2–3 ore",tm5:"3–4 ore",tm6:"Più di 4 ore",tm7:"Non sono sicuro/a",
- q_neg:"Quali consideri i maggiori effetti negativi potenziali dell’uso dei social media?",
- ne1:"Minore attenzione e concentrazione",ne2:"Passarci più tempo del previsto / uso compulsivo",ne3:"Sonno peggiore",ne4:"Stress, ansia o umore basso",ne5:"Pressione sull’aspetto e sull’immagine corporea",ne6:"Confrontarsi con gli altri / paura di perdersi qualcosa",ne7:"Cyberbullismo, odio o molestie",ne8:"Disinformazione e fake news",ne9:"Contenuti generati o manipolati dall’IA",ne10:"Uso improprio dei dati personali e della privacy",ne11:"Esposizione a contenuti dannosi o estremi",ne12:"Meno tempo di persona con famiglia e amici",
- q_aware_before:"Prima di questo sondaggio, quanto eri consapevole dei potenziali effetti negativi dei social media?",sc_aw1:"Per niente consapevole",sc_aw2:"Poco consapevole",sc_aw3:"Abbastanza consapevole",sc_aw4:"Molto consapevole",sc_aw5:"Estremamente consapevole",
- q_impact_self:"In che misura pensi che l’uso dei social media possa influire negativamente sui seguenti aspetti?",
- q_impact_child:"In che misura pensi che l’uso dei social media possa influire negativamente sui seguenti aspetti per tuo figlio/tua figlia?",intro_child:"Ora pensa a tuo figlio/tua figlia. Se hai più di un figlio sotto i 18 anni, pensa a quello che compie gli anni per primo.",
- q_impact_close:"In che misura pensi che l’uso dei social media possa influire negativamente sui seguenti aspetti per una persona a te vicina?",intro_close:"Ora pensa a una persona a te vicina, come partner, un familiare o un amico stretto.",
- it_att:"Attenzione e concentrazione",it_well:"Benessere mentale",it_self:"Autostima e immagine corporea",it_sleep:"Qualità del sonno",it_rel:"Relazioni sociali",it_priv:"Privacy e dati personali",it_mis:"Esposizione alla disinformazione",it_comp:"Uso compulsivo o eccessivo",
- sc_imp1:"Per niente",sc_imp2:"Poco",sc_imp3:"Moderatamente",sc_imp4:"Molto",sc_imp5:"Estremamente",
- x_notsure:"Non sono sicuro/a",x_dontknow:"Non so",x_na:"Non pertinente",x_child_nouse:"Mio figlio/mia figlia non usa i social media",x_close_nouse:"Questa persona non usa i social media",
- q_experienced:"Ti è capitato personalmente qualcosa di quanto segue in relazione ai social media?",ex1:"Passare sui social più tempo del previsto",ex2:"Difficoltà a concentrarmi dopo averli usati",ex3:"Effetti negativi sul mio umore",ex4:"Confrontarmi con gli altri",ex5:"Sentirmi peggio riguardo al mio aspetto",ex6:"Sonno disturbato",none_above:"Nessuna delle precedenti",
- q_severity:"Quanto gravi consideri i potenziali effetti negativi dei social media per ciascun gruppo?",g_you:"Te stesso/a",g_adults:"Gli adulti in generale",g_teens:"Gli adolescenti di 13–17 anni",g_kids:"I bambini sotto i 13 anni",
- sc_sev1:"Per niente gravi",sc_sev2:"Poco gravi",sc_sev3:"Abbastanza gravi",sc_sev4:"Molto gravi",sc_sev5:"Estremamente gravi",
- q_activities:"Cosa fai di solito sui social media?",ac1:"Guardare video o altro intrattenimento",ac2:"Scrivere ad amici e familiari",ac3:"Seguire notizie e attualità",ac4:"Imparare cose nuove o cercare informazioni",ac5:"Trovare ispirazione (ricette, fitness, viaggi, moda, casa)",ac6:"Condividere foto, video o post",ac7:"Seguire creator o influencer",ac8:"Scoprire prodotti, shopping o recensioni",ac9:"Lavoro, networking o carriera",ac10:"Partecipare a community o gruppi di interesse",
- q_benefits:"Quali pensi siano i benefici più preziosi dei social media?",be1:"Restare in contatto con famiglia e amici",be2:"Intrattenimento e relax",be3:"Accesso a notizie e informazioni",be4:"Apprendimento e istruzione",be5:"Ispirazione e creatività",be6:"Trovare community e senso di appartenenza",be7:"Esprimere me stesso/a",be8:"Opportunità di carriera e di business",be9:"Trovare supporto o consigli (es. salute, genitorialità, aiuto tra pari)",be10:"Scoprire tendenze, eventi e nuove idee",
- q_balance:"Nel complesso, come si bilanciano benefici ed effetti negativi dei social media?",b_you:"Per te personalmente",b_kids:"Per bambini e adolescenti",
- sc_bal1:"Gli effetti negativi prevalgono nettamente",sc_bal2:"Gli effetti negativi prevalgono leggermente",sc_bal3:"Più o meno in equilibrio",sc_bal4:"I benefici prevalgono leggermente",sc_bal5:"I benefici prevalgono nettamente",side_neg:"Effetti negativi",side_pos:"Benefici",
- q_circle:"Quanto pensi che le seguenti persone siano consapevoli dei potenziali rischi dei social media?",c_you:"Tu",c_friends:"I tuoi amici stretti",c_partner:"Il/la tuo/a partner",c_family:"I tuoi genitori o familiari più anziani",c_parents:"I genitori di bambini e adolescenti in generale",
- q_together:"Cosa fai, se capita, sui social media insieme alle persone a te vicine (partner, famiglia o amici)?",to1:"Guardare contenuti insieme",to2:"Mandarci post, video o meme",to3:"Creare contenuti insieme",to4:"Partecipare insieme a sfide o tendenze",to5:"Provare nuove ricette, allenamenti o prodotti e recensirli",to6:"Organizzare attività, viaggi o eventi",to7:"Giocare insieme",to_none:"Non usiamo i social media insieme",
- q_agree:"Quanto sei d’accordo con le seguenti affermazioni?",st_closer:"Condividere contenuti sui social media mi avvicina alle persone a cui tengo.",st_far:"I social media mi aiutano a far parte della vita di familiari e amici che vivono lontano.",
- sc_ag1:"Per niente d’accordo",sc_ag2:"In disaccordo",sc_ag3:"Né d’accordo né in disaccordo",sc_ag4:"D’accordo",sc_ag5:"Completamente d’accordo",
- q_reduced:"Le preoccupazioni sui potenziali effetti negativi dei social media ti hanno mai portato/a a ridurne l’uso?",red_cons:"Ci ho pensato ma non l’ho ridotto",
- q_measures:"Quali delle seguenti misure usi attualmente per gestire l’uso dei social media?",me1:"Limiti di tempo di utilizzo",me2:"Silenziare o disattivare le notifiche",me3:"Fare pause dai social media",me4:"Smettere di seguire o silenziare account",me5:"Evitare i social media prima di dormire",
- h_n1:"A volte passo sui social media più tempo di quanto vorrei.",h_n2:"Faccio fatica a smettere di scorrere una volta iniziato.",h_n3:"Mi sento irrequieto/a o a disagio quando non posso controllare i social media.",h_n4:"Conoscere i potenziali rischi dei social media non mi porta necessariamente a usarli di meno.",h_p1:"I social media mi aiutano a restare al passo con nuove tendenze e idee (es. eventi, ricette, regali o idee per feste).",h_p2:"I social media mi aiutano a restare in contatto con le persone che contano per me.",h_p3:"I social media mi ispirano a provare cose nuove.",
- q_support:"Quanto sostieni le seguenti misure?",s_u13:"Limitare l’accesso ai social media per i bambini sotto i 13 anni",s_teen:"Introdurre ulteriori misure di protezione per gli utenti di 13–17 anni",s_resp:"Obbligare le piattaforme ad assumersi più responsabilità nella tutela dei giovani",s_info:"Obbligare le piattaforme a informare più chiaramente sui potenziali rischi",s_label:"Obbligare le piattaforme a segnalare chiaramente le immagini di persone modificate o alterate dall’IA",
- sc_sup1:"Fortemente contrario/a",sc_sup2:"Contrario/a",sc_sup3:"Né favorevole né contrario/a",sc_sup4:"Favorevole",sc_sup5:"Fortemente favorevole",
- intro_rules:"Alcuni paesi hanno introdotto o proposto leggi che limitano l’accesso dei bambini ai social media, ad esempio regole sull’età minima.",
- q_r_self:"Pensi che tali restrizioni cambierebbero il tuo comportamento sui social media?",q_r_others:"Pensi che tali restrizioni cambierebbero il modo in cui gestisci l’uso dei social media di bambini o altre persone a te vicine?",r_sig:"Sì, molto",r_sli:"Sì, un po’",
- q_final:"Qual è il cambiamento più importante per rendere i social media più sani e piacevoli per le persone e la società?",final_h:"Facoltativo. Una o due frasi vanno benissimo.",final_ph:"La mia idea è…",send_idea:"Invia la mia idea →",skip:"Salta →",chars:"caratteri",
- pick_max:"Scegline fino a {n}.",max_reached:"Sono già {n}! Tocca una scelta per cambiarla.",your_picks:"La tua top {n}",specify:"Specifica (facoltativo)",
- deck_hint:"Valuta ogni carta. Suggerimento: da tastiera puoi premere 1–5.",deck_done:"Tutto valutato! Tocca una carta per cambiare risposta.",apply_all:"Vale per tutti",
- meter_hint:"Tocca un livello.",seesaw_hint:"Fai pendere l’altalena per ogni riga.",
- as_title:"Gioco bonus: associazione di parole",as_intro:"Veloce! Per ogni parola, tocca la PRIMA parola che ti viene in mente. Più sei veloce, più XP guadagni. Non ci sono risposte giuste.",as_play:"Gioca →",as_skip:"Salta il gioco",as_round:"Round {n} di 3",as_fast:"⚡ Velocissimo!",as_nice:"Bella scelta!",as_trail:"La tua scia di parole",as_again:"Gioca ancora",
- ap1:"Social media",ap2:"Smartphone",ap3:"Bambini online",
- w_connection:"Connessione",w_fun:"Divertimento",w_inspiration:"Ispirazione",w_learning:"Imparare",w_distraction:"Distrazione",w_stress:"Stress",w_addiction:"Dipendenza",w_danger:"Pericolo",w_habit:"Abitudine",w_news:"Notizie",w_time:"Tempo",w_work:"Lavoro",
- res_title:"La tua istantanea",res_apps:"App a settimana",res_phone:"Primo smartphone",res_time:"Social media al giorno",res_word:"La tua parola per i social",res_concern:"Preoccupazione principale",res_benefit:"Beneficio principale",res_balance:"La tua altalena",res_lens:"Il tuo sguardo",
- lens_more:"Valuti i rischi più gravi per gli adolescenti che per te stesso/a: uno degli aspetti che questo studio esplora.",lens_same:"Valuti i rischi più o meno uguali per te e per gli adolescenti.",lens_less:"Valuti i rischi più gravi per te che per gli adolescenti.",
- support_line:"Se i social media influiscono sul tuo umore, non sei solo/a. Trova linee di ascolto e supporto su",
- ar_min:"Il minimalista digitale",ar_mind:"Tieni i social media a distanza: uno sguardo raro in un mondo connesso.",
- bdW:"Mago delle parole",bdR:"Esploratore dei rischi",bdL:"Legislatore",
- d_text:"Le tue risposte sono state inviate. Ecco il tuo passaporto digitale e la tua istantanea personale."
-},
-es:{
- m1:"⏱ ~8 minutos",m2:"🕹 8 niveles + juego extra",
- w_text:"Explora tu identidad digital y reflexiona sobre las redes sociales: sus riesgos, su lado bueno y cómo se protege a niños y jóvenes en internet en la UE.",
- lv0:"Registro",lv1:"Tu perfil",lv2:"Vida en pantalla",lv3:"Radar de riesgos",lv4:"Lado bueno",lv5:"Tú y tu entorno",lv6:"Hábitos",lv7:"Las reglas",lv8:"La última palabra",
- lv0d:"Edad y consentimiento",lv1d:"Crea tu pasaporte",lv2d:"Móvil, apps y tiempo",lv3d:"Detecta los riesgos",lv4d:"Lo positivo",lv5d:"Amigos y familia",lv6d:"Tus rutinas",lv7d:"Da tu opinión",lv8d:"Una última idea",
- bonus:"Extra",bonus_d:"Juego de asociación de palabras",g_zm:"Gen Z · Millennial",skipped:"Omitido",
- lu1:"¡Identidad lista! Siguiente: tu vida en pantalla, empezando con un juego rápido de palabras.",lu2:"Vida en pantalla escaneada. Ahora enciende tu radar de riesgos.",lu3:"Radar completo. Hora de ver el lado bueno.",lu4:"Equilibrio encontrado. Siguiente: tú y las personas de tu entorno.",lu5:"Entorno mapeado. Veamos tus hábitos diarios.",lu6:"Hábitos registrados. Ahora te toca juzgar las reglas.",lu7:"¡Votos contados! Solo queda un nivel.",lu8:"¡Eso es todo! Envía para desbloquear tu instantánea Digital Mind.",
- q_work:"¿Qué tipo de trabajo haces principalmente?",wk1:"Sobre todo en un escritorio o frente a una pantalla",wk2:"Sobre todo físico o en movimiento",wk3:"Una mezcla de ambos",
- q_ai_freq:"¿Con qué frecuencia usas herramientas de IA (p. ej., ChatGPT, Copilot, Gemini) en tu trabajo o estudios?",f_never:"Nunca",f_rarely:"Rara vez",f_some:"A veces",f_often:"A menudo",f_vo:"Muy a menudo",
- q_ai_conf:"¿Qué tan seguro/a te sientes usando herramientas de IA?",sc_conf1:"Nada seguro/a",sc_conf2:"Algo seguro/a",sc_conf3:"Moderadamente seguro/a",sc_conf4:"Muy seguro/a",sc_conf5:"Totalmente seguro/a",
- q_phone_age:"¿Qué edad tenías cuando empezaste a usar un smartphone con regularidad?",pa1:"Menos de 10",pa2:"10–12",pa3:"13–15",pa4:"16–18",pa5:"Más de 18",pa6:"Nunca he usado un smartphone",pa7:"No estoy seguro/a",
- q_sm_freq:"¿Con qué frecuencia usas las redes sociales?",sf1:"Varias veces por hora",sf2:"Más o menos una vez por hora",sf3:"Varias veces al día",sf4:"Más o menos una vez al día",sf5:"Menos de una vez al día",sf6:"Nunca",
- q_sm_time:"¿Cuánto tiempo pasas aproximadamente cada día en redes sociales?",tm1:"Menos de 30 minutos",tm2:"De 30 minutos a 1 hora",tm3:"1–2 horas",tm4:"2–3 horas",tm5:"3–4 horas",tm6:"Más de 4 horas",tm7:"No estoy seguro/a",
- q_neg:"¿Cuáles consideras los mayores efectos negativos potenciales del uso de redes sociales?",
- ne1:"Menor atención y concentración",ne2:"Pasar más tiempo del previsto / uso compulsivo",ne3:"Dormir peor",ne4:"Estrés, ansiedad o bajo estado de ánimo",ne5:"Presión sobre la apariencia y la imagen corporal",ne6:"Compararse con otros / miedo a perderse algo",ne7:"Ciberacoso, odio o acoso",ne8:"Desinformación y noticias falsas",ne9:"Contenido generado o manipulado con IA",ne10:"Mal uso de los datos personales y la privacidad",ne11:"Exposición a contenido dañino o extremo",ne12:"Menos tiempo cara a cara con familia y amigos",
- q_aware_before:"Antes de esta encuesta, ¿qué tan consciente eras de los posibles efectos negativos de las redes sociales?",sc_aw1:"Nada consciente",sc_aw2:"Algo consciente",sc_aw3:"Moderadamente consciente",sc_aw4:"Muy consciente",sc_aw5:"Totalmente consciente",
- q_impact_self:"¿En qué medida crees que el uso de redes sociales puede afectar negativamente a los siguientes aspectos?",
- q_impact_child:"¿En qué medida crees que el uso de redes sociales puede afectar negativamente a los siguientes aspectos en tu hijo o hija?",intro_child:"Ahora piensa en tu hijo o hija. Si tienes más de un hijo menor de 18 años, piensa en el que cumpla años primero.",
- q_impact_close:"¿En qué medida crees que el uso de redes sociales puede afectar negativamente a los siguientes aspectos en una persona cercana?",intro_close:"Ahora piensa en una persona cercana, como tu pareja, un familiar o un amigo íntimo.",
- it_att:"Atención y concentración",it_well:"Bienestar mental",it_self:"Autoestima e imagen corporal",it_sleep:"Calidad del sueño",it_rel:"Relaciones sociales",it_priv:"Privacidad y datos personales",it_mis:"Exposición a la desinformación",it_comp:"Uso compulsivo o excesivo",
- sc_imp1:"Nada",sc_imp2:"Un poco",sc_imp3:"Moderadamente",sc_imp4:"Bastante",sc_imp5:"Muchísimo",
- x_notsure:"No estoy seguro/a",x_dontknow:"No lo sé",x_na:"No aplica",x_child_nouse:"Mi hijo/a no usa redes sociales",x_close_nouse:"Esta persona no usa redes sociales",
- q_experienced:"¿Has vivido personalmente alguna de estas situaciones relacionadas con las redes sociales?",ex1:"Pasar más tiempo del previsto en redes sociales",ex2:"Dificultad para concentrarme después de usarlas",ex3:"Efectos negativos en mi estado de ánimo",ex4:"Compararme con otras personas",ex5:"Sentirme peor con mi apariencia",ex6:"Alteraciones del sueño",none_above:"Ninguna de las anteriores",
- q_severity:"¿Qué tan graves consideras los posibles efectos negativos de las redes sociales para cada grupo?",g_you:"Tú mismo/a",g_adults:"Los adultos en general",g_teens:"Los adolescentes de 13 a 17 años",g_kids:"Los niños menores de 13 años",
- sc_sev1:"Nada graves",sc_sev2:"Algo graves",sc_sev3:"Moderadamente graves",sc_sev4:"Muy graves",sc_sev5:"Extremadamente graves",
- q_activities:"¿Qué sueles hacer en redes sociales?",ac1:"Ver vídeos u otro entretenimiento",ac2:"Escribir a amigos y familia",ac3:"Seguir noticias y actualidad",ac4:"Aprender cosas nuevas o buscar información",ac5:"Buscar inspiración (recetas, fitness, viajes, moda, hogar)",ac6:"Compartir mis fotos, vídeos o publicaciones",ac7:"Seguir a creadores o influencers",ac8:"Descubrir productos, compras o reseñas",ac9:"Trabajo, networking o carrera",ac10:"Unirme a comunidades o grupos con intereses comunes",
- q_benefits:"¿Cuáles crees que son los beneficios más valiosos de las redes sociales?",be1:"Mantener el contacto con familia y amigos",be2:"Entretenimiento y relajación",be3:"Acceso a noticias e información",be4:"Aprendizaje y educación",be5:"Inspiración y creatividad",be6:"Encontrar comunidades y sentido de pertenencia",be7:"Expresarme",be8:"Oportunidades profesionales y de negocio",be9:"Encontrar apoyo o consejo (p. ej., salud, crianza, apoyo entre iguales)",be10:"Descubrir tendencias, eventos e ideas nuevas",
- q_balance:"En general, ¿cómo se equilibran los beneficios y los efectos negativos de las redes sociales?",b_you:"Para ti personalmente",b_kids:"Para niños y adolescentes",
- sc_bal1:"Los efectos negativos pesan claramente más",sc_bal2:"Los efectos negativos pesan algo más",sc_bal3:"Más o menos igual",sc_bal4:"Los beneficios pesan algo más",sc_bal5:"Los beneficios pesan claramente más",side_neg:"Efectos negativos",side_pos:"Beneficios",
- q_circle:"¿Qué tan conscientes crees que son las siguientes personas de los posibles riesgos de las redes sociales?",c_you:"Tú",c_friends:"Tus amigos cercanos",c_partner:"Tu pareja",c_family:"Tus padres o familiares mayores",c_parents:"Los padres de niños y adolescentes en general",
- q_together:"¿Qué haces, si es el caso, en redes sociales junto con personas cercanas (pareja, familia o amigos)?",to1:"Ver contenido juntos",to2:"Enviarnos publicaciones, vídeos o memes",to3:"Crear contenido juntos",to4:"Participar juntos en retos o tendencias",to5:"Probar recetas, entrenamientos o productos nuevos y reseñarlos",to6:"Planear actividades, viajes o eventos",to7:"Jugar juntos",to_none:"No usamos las redes sociales juntos",
- q_agree:"¿En qué medida estás de acuerdo con las siguientes afirmaciones?",st_closer:"Compartir contenido en redes sociales me acerca a las personas que me importan.",st_far:"Las redes sociales me ayudan a seguir formando parte de la vida de familiares y amigos que viven lejos.",
- sc_ag1:"Totalmente en desacuerdo",sc_ag2:"En desacuerdo",sc_ag3:"Ni de acuerdo ni en desacuerdo",sc_ag4:"De acuerdo",sc_ag5:"Totalmente de acuerdo",
- q_reduced:"¿La preocupación por los posibles efectos negativos de las redes sociales te ha llevado alguna vez a reducir tu uso?",red_cons:"Lo he pensado, pero no lo he reducido",
- q_measures:"¿Cuáles de estas medidas usas actualmente para gestionar tu uso de redes sociales?",me1:"Límites de tiempo de pantalla",me2:"Silenciar o desactivar notificaciones",me3:"Tomar descansos de las redes sociales",me4:"Dejar de seguir o silenciar cuentas",me5:"Evitar las redes sociales antes de dormir",
- h_n1:"A veces paso más tiempo en redes sociales del que pretendo.",h_n2:"Me cuesta dejar de hacer scroll una vez que empiezo.",h_n3:"Me siento inquieto/a o incómodo/a cuando no puedo mirar las redes sociales.",h_n4:"Conocer los posibles riesgos de las redes sociales no hace necesariamente que las use menos.",h_p1:"Las redes sociales me ayudan a estar al día de tendencias e ideas nuevas (p. ej., eventos, recetas, regalos o ideas para fiestas).",h_p2:"Las redes sociales me ayudan a seguir conectado/a con las personas que me importan.",h_p3:"Las redes sociales me inspiran a probar cosas nuevas.",
- q_support:"¿En qué medida apoyas las siguientes medidas?",s_u13:"Restringir el acceso a redes sociales a menores de 13 años",s_teen:"Introducir medidas de protección adicionales para usuarios de 13 a 17 años",s_resp:"Exigir a las plataformas más responsabilidad en la protección de los jóvenes",s_info:"Exigir a las plataformas información más clara sobre los posibles riesgos",s_label:"Exigir a las plataformas que etiqueten claramente las imágenes de personas editadas o alteradas con IA",
- sc_sup1:"Totalmente en contra",sc_sup2:"En contra",sc_sup3:"Ni a favor ni en contra",sc_sup4:"A favor",sc_sup5:"Totalmente a favor",
- intro_rules:"Algunos países han introducido o propuesto leyes que restringen el acceso de los niños a las redes sociales, por ejemplo con reglas de edad mínima.",
- q_r_self:"¿Crees que esas restricciones cambiarían tu propio comportamiento en redes sociales?",q_r_others:"¿Crees que esas restricciones cambiarían cómo gestionas el uso de redes sociales de niños u otras personas cercanas?",r_sig:"Sí, mucho",r_sli:"Sí, un poco",
- q_final:"¿Cuál es el cambio más importante para que las redes sociales sean más sanas y agradables para las personas y la sociedad?",final_h:"Opcional. Una o dos frases es perfecto.",final_ph:"Mi idea es…",send_idea:"Enviar mi idea →",skip:"Omitir →",chars:"caracteres",
- pick_max:"Elige hasta {n}.",max_reached:"¡Ya son {n}! Toca una elección para cambiarla.",your_picks:"Tu top {n}",specify:"Especifica (opcional)",
- deck_hint:"Valora cada tarjeta. Consejo: con teclado puedes pulsar 1–5.",deck_done:"¡Todo valorado! Toca una tarjeta para cambiar tu respuesta.",apply_all:"Se aplica a todo",
- meter_hint:"Toca un nivel.",seesaw_hint:"Inclina el balancín en cada fila.",
- as_title:"Juego extra: asociación de palabras",as_intro:"¡Rápido! Para cada palabra, toca la PRIMERA palabra que te venga a la mente. Cuanto más rápido, más XP. No hay respuestas correctas.",as_play:"Jugar →",as_skip:"Saltar el juego",as_round:"Ronda {n} de 3",as_fast:"⚡ ¡Rapidísimo!",as_nice:"¡Buena elección!",as_trail:"Tu rastro de palabras",as_again:"Jugar otra vez",
- ap1:"Redes sociales",ap2:"Smartphone",ap3:"Niños en internet",
- w_connection:"Conexión",w_fun:"Diversión",w_inspiration:"Inspiración",w_learning:"Aprender",w_distraction:"Distracción",w_stress:"Estrés",w_addiction:"Adicción",w_danger:"Peligro",w_habit:"Hábito",w_news:"Noticias",w_time:"Tiempo",w_work:"Trabajo",
- res_title:"Tu instantánea",res_apps:"Apps a la semana",res_phone:"Primer smartphone",res_time:"Redes sociales al día",res_word:"Tu palabra para las redes",res_concern:"Mayor preocupación",res_benefit:"Mayor beneficio",res_balance:"Tu balancín",res_lens:"Tu mirada",
- lens_more:"Valoras los riesgos como más graves para los adolescentes que para ti, uno de los patrones que explora este estudio.",lens_same:"Valoras los riesgos más o menos igual para ti y para los adolescentes.",lens_less:"Valoras los riesgos como más graves para ti que para los adolescentes.",
- support_line:"Si las redes sociales afectan cómo te sientes, no estás solo/a. Encuentra líneas de ayuda y apoyo en",
- ar_min:"El minimalista digital",ar_mind:"Mantienes las redes sociales a distancia: una mirada poco común en un mundo conectado.",
- bdW:"Mago de las palabras",bdR:"Explorador de riesgos",bdL:"Legislador",
- d_text:"Tus respuestas se han enviado. Aquí tienes tu pasaporte digital y tu instantánea personal."
-}};
-
-/* ============================================================
-   SURVEY CONTENT (questionnaire v3 · "Homo distractus")
-   Stored answers are always the ENGLISH labels; rating scales are
-   stored as numbers 1–5, with -1 = Not sure / Don't know / Prefer
-   not to say and -2 = Not applicable / does not use social media.
-   ============================================================ */
-LANGS.forEach(l=>Object.assign(T[l],T2[l]));
 const COUNTRIES=["DE","FR","IT","ES","PL","NL","BE"];
 const EU_OTHERS=["Austria","Bulgaria","Croatia","Cyprus","Czechia","Denmark","Estonia","Finland","Greece","Hungary","Ireland","Latvia","Lithuania","Luxembourg","Malta","Portugal","Romania","Slovakia","Slovenia","Sweden"];
 const LABEL_POS={DE:[352,226],FR:[232,304],IT:[372,336],ES:[132,414],PL:[470,192],NL:[262,140,294,184],BE:[230,248,279,219]};
@@ -1237,8 +760,6 @@ const PLATFORMS=[
  {id:"Facebook",ab:"f",bg:"#1877F2",c:"#1877F2"},
  {id:"Snapchat",ab:"SC",bg:"#FFFC00",c:"#FFFC00",dark:true},
  {id:"WhatsApp",ab:"WA",bg:"#25D366",c:"#25D366"},
- {id:"Telegram",ab:"TG",bg:"#26A5E4",c:"#26A5E4"},
- {id:"Signal",ab:"SG",bg:"#3A76F0",c:"#3A76F0"},
  {id:"X (Twitter)",ab:"X",bg:"#111",c:"#ffffff"},
  {id:"Reddit",ab:"R",bg:"#FF4500",c:"#FF4500"},
  {id:"Pinterest",ab:"P",bg:"#E60023",c:"#E60023"},
@@ -1246,59 +767,28 @@ const PLATFORMS=[
  {id:"Discord",ab:"D",bg:"#5865F2",c:"#5865F2"},
  {id:"Twitch",ab:"Tw",bg:"#9146FF",c:"#9146FF"}
 ];
-const IMPACT=p=>[[p+"_attention","it_att","🎯"],[p+"_wellbeing","it_well","💚"],[p+"_selfesteem","it_self","🪞"],[p+"_sleep","it_sleep","😴"],[p+"_relationships","it_rel","🤝"],[p+"_privacy","it_priv","🔐"],[p+"_misinformation","it_mis","📰"],[p+"_compulsive","it_comp","🔄"]];
-const RESTRICT=[["r_sig","🔺"],["r_sli","↗️"],["no","➖"],["x_notsure","🤔"],["x_na","🚫"]];
-const SCALES={imp:"sc_imp",sev:"sc_sev",aw:"sc_aw",ag:"sc_ag",sup:"sc_sup",bal:"sc_bal",conf:"sc_conf"};
-const FACES={ag:["😠","🙁","😐","🙂","😍"],sup:["👎","✋","🤷","👍","🙌"]};
-const PAL={risk:["#3fd9c9","#9fdcae","#E0BE86","#f2a07a","#F07A86"],up:["#4a6a86","#3f8fa3","#33b3b8","#2bd3cb","#22E4D4"],pos:["#F07A86","#f2a07a","#c7c2d6","#7fd8c0","#22E4D4"]};
-const SCALE_PAL={imp:"risk",sev:"risk",aw:"up",conf:"up",ag:"pos",sup:"pos",bal:"pos"};
-const ASSOC_PROMPTS=[["assoc_social_media","ap1","📱"],["assoc_smartphone","ap2","📲"],["assoc_children_online","ap3","🧒"]];
-const ASSOC_WORDS=["w_connection","w_fun","w_inspiration","w_learning","w_distraction","w_stress","w_addiction","w_danger","w_habit","w_news","w_time","w_work"];
-const FIXED_LAST=["other","none","none_above","prefer","to_none"];
-const TIME_KEYS=["tm1","tm2","tm3","tm4","tm5","tm6"],TIME_EMO=["🌿","🙂","📱","🔋","🪫","🌀"];
-
+const REALITY=[
+ ["q1_concentration","🎯"],["q2_scrolling","📲"],["q3_children_risk","🧒"],["q4_age_restrictions","🛡️"],
+ ["q5_parent_awareness","👨‍👩‍👧"],["q6_changed_use","🔁"],["q7_kids_act_awareness","⚖️"]
+];
 const Q={
  gender:{type:"gender",key:"gender_q",opts:["woman","man","nonbinary","selfdesc","prefer"]},
  country:{type:"country",key:"country_q"},
- education:{type:"single",key:"edu_q",opts:[["edu1","📘"],["edu2","🎒"],["edu3","🛠️"],["edu4","🎓"],["edu5","📜"],["edu6","🔬"],["other","✳️"],["prefer","🔒"]]},
- employment_status:{type:"single",key:"emp_q",opts:[["emp1","📚"],["emp2","💼"],["emp3","⏱️"],["emp4","🚀"],["emp5","🔍"],["emp6","🏡"],["emp7","🌴"],["other","✳️"],["prefer","🔒"]]},
- work_type:{type:"single",key:"q_work",big:true,opts:[["wk1","💻"],["wk2","🏃"],["wk3","🔀"],["prefer","🔒"]]},
- ai_use_freq:{type:"single",key:"q_ai_freq",big:true,opts:[["f_never","🚫"],["f_rarely","🤖"],["f_some","🤖🤖"],["f_often","🤖🤖🤖"],["f_vo","🤖🤖🤖🤖"],["prefer","🔒"]]},
- ai_confidence:{type:"meter",key:"q_ai_conf",scale:"conf",icon:"🤖",extras:[[-1,"prefer"]]},
- parent_guardian:{type:"single",key:"par_q",big:true,opts:[["yes","👪"],["no","🙂"],["prefer","🔒"]]},
- children_age_groups:{type:"multi",key:"kids_q",years:true,opts:[["0–5","🍼"],["6–9","🧸"],["10–12","🎮"],["13–14","📱"],["15–17","🎧"],["prefer","🔒"]],excl:["prefer"]},
- assoc:{type:"assoc",key:"as_title"},
- first_smartphone_age:{type:"single",key:"q_phone_age",visual:"timeline",opts:[["pa1","📱"],["pa2","📱"],["pa3","📱"],["pa4","📱"],["pa5","📱"],["pa6","🚫",1],["pa7","🤔",1]]},
+ education:{type:"list",key:"edu_q",opts:[["edu1","📘"],["edu2","🎒"],["edu3","🛠️"],["edu4","🎓"],["edu5","📜"],["edu6","🔬"],["other","✳️"],["prefer","🔒"]]},
+ employment_status:{type:"list",key:"emp_q",opts:[["emp1","📚"],["emp2","💼"],["emp3","⏱️"],["emp4","🚀"],["emp5","🔍"],["emp6","🏡"],["emp7","🌴"],["other","✳️"],["prefer","🔒"]]},
+ parent_guardian:{type:"list",key:"par_q",big:true,opts:[["yes","👪"],["no","🙂"],["prefer","🔒"]]},
+ children_age_groups:{type:"list",key:"kids_q",multi:true,opts:[["0–5","🍼"],["6–9","🧸"],["10–12","🎮"],["13–14","📱"],["15–17","🎧"],["prefer","🔒"]]},
  platforms_weekly:{type:"platforms",key:"plat_q"},
- sm_frequency:{type:"single",key:"q_sm_freq",visual:"pulse",opts:[["sf1",5],["sf2",4],["sf3",3],["sf4",2],["sf5",1],["sf6",0]]},
- sm_daily_time:{type:"time",key:"q_sm_time"},
- negative_effects:{type:"multi",key:"q_neg",max:3,rand:true,opts:[["ne1","🎯"],["ne2","⏳"],["ne3","😴"],["ne4","😟"],["ne5","🪞"],["ne6","👀"],["ne7","💢"],["ne8","📰"],["ne9","🤖"],["ne10","🔓"],["ne11","⚠️"],["ne12","🫂"],["other","✳️"],["none","🚫"]],other:"negative_effects_other",excl:["none"]},
- awareness_before:{type:"meter",key:"q_aware_before",scale:"aw",icon:"💡"},
- impact_self:{type:"deck",key:"q_impact_self",scale:"imp",rand:true,items:IMPACT("impact_self"),extras:[[-1,"x_notsure"]]},
- impact_child:{type:"deck",key:"q_impact_child",intro:"intro_child",scale:"imp",rand:true,items:IMPACT("impact_child"),extras:[[-1,"x_notsure"],[-2,"x_child_nouse"]],applyAll:-2},
- impact_close:{type:"deck",key:"q_impact_close",intro:"intro_close",scale:"imp",rand:true,items:IMPACT("impact_close"),extras:[[-1,"x_notsure"],[-2,"x_close_nouse"]],applyAll:-2},
- experienced:{type:"multi",key:"q_experienced",opts:[["ex1","⏳"],["ex2","🌀"],["ex3","😞"],["ex4","👀"],["ex5","🪞"],["ex6","😴"],["none_above","🚫"],["prefer","🔒"]],excl:["none_above","prefer"]},
- severity:{type:"deck",key:"q_severity",scale:"sev",visual:"thermo",items:[["severity_self","g_you","@you"],["severity_adults","g_adults","@35-44"],["severity_teens","g_teens","@16-17"],["severity_children","g_kids","@u13"]],extras:[[-1,"x_notsure"]]},
- activities:{type:"multi",key:"q_activities",rand:true,opts:[["ac1","🎬"],["ac2","💬"],["ac3","📰"],["ac4","🧠"],["ac5","🍳"],["ac6","📸"],["ac7","⭐"],["ac8","🛍️"],["ac9","💼"],["ac10","🫶"],["other","✳️"]],other:"activities_other"},
- benefits:{type:"multi",key:"q_benefits",max:3,rand:true,opts:[["be1","👨‍👩‍👧"],["be2","🎉"],["be3","📰"],["be4","📚"],["be5","🎨"],["be6","🫶"],["be7","🗣️"],["be8","💼"],["be9","🤝"],["be10","✨"],["none","🚫"]],excl:["none"]},
- balance:{type:"seesaw",key:"q_balance",rows:[["balance_personal","b_you"],["balance_children","b_kids"]]},
- circle_awareness:{type:"deck",key:"q_circle",scale:"aw",items:[["aware_you","c_you","@you"],["aware_friends","c_friends","👯"],["aware_partner","c_partner","💑"],["aware_family","c_family","👵"],["aware_parents","c_parents","👨‍👩‍👧"]],extras:[[-1,"x_dontknow"],[-2,"x_na"]]},
- together:{type:"multi",key:"q_together",opts:[["to1","🍿"],["to2","📤"],["to3","🎥"],["to4","🔥"],["to5","🧪"],["to6","🗓️"],["to7","🎮"],["to_none","🚫"],["prefer","🔒"]],excl:["to_none","prefer"]},
- closeness:{type:"deck",key:"q_agree",scale:"ag",items:[["agree_closer","st_closer","💞"],["agree_far_away","st_far","🌍"]],extras:[[-2,"x_na"]]},
- reduced_use:{type:"single",key:"q_reduced",big:true,opts:[["yes","✅"],["no","❌"],["red_cons","🤔"]]},
- measures:{type:"multi",key:"q_measures",opts:[["me1","⏲️"],["me2","🔕"],["me3","🏝️"],["me4","🙈"],["me5","🌙"],["other","✳️"],["none_above","🚫"]],other:"measures_other",excl:["none_above"]},
- habits:{type:"deck",key:"q_agree",scale:"ag",rand:true,items:[["habit_n1","h_n1","⏳"],["habit_n2","h_n2","🌀"],["habit_n3","h_n3","😬"],["habit_n4","h_n4","🧠"],["habit_p1","h_p1","✨"],["habit_p2","h_p2","🫶"],["habit_p3","h_p3","🚀"]]},
- support:{type:"deck",key:"q_support",scale:"sup",rand:true,items:[["support_under13","s_u13","🧒"],["support_teen_protection","s_teen","🛡️"],["support_platform_responsibility","s_resp","🏢"],["support_risk_info","s_info","ℹ️"],["support_ai_labels","s_label","🏷️"]]},
- restriction_self:{type:"single",key:"q_r_self",intro:"intro_rules",big:true,opts:RESTRICT},
- restriction_others:{type:"single",key:"q_r_others",intro:"intro_rules",big:true,opts:RESTRICT},
- final_word:{type:"text",key:"q_final"}
+ daily_social_time:{type:"time",key:"time_q"}
 };
+REALITY.forEach(([id,ic])=>Q[id]={type:"swipe",key:id,icon:ic});
+const TIME_KEYS=["t0","t1","t2","t3","t4","t5"];
+const TIME_EMO=["🌿","🙂","📱","🔋","🪫","🌀"];
 
 /* ============================================================
    STATE
    ============================================================ */
-const S={lang:"en",screen:"welcome",age:null,consent:{adult:false,guardian:false,assent:false},a:{},pos:0,started:null,lastXP:0,submitted:false,
-  pid:"DM-"+Math.random().toString(36).slice(2,6).toUpperCase(),flipped:{},order:{},deck:{},assoc:{phase:"intro",round:0,picks:[]}};
+const S={lang:"en",screen:"welcome",age:null,consent:{adult:false,guardian:false,assent:false},a:{},pos:0,started:null,lastXP:0,submitted:false,pid:"DM-"+Math.random().toString(36).slice(2,6).toUpperCase(),flipped:{}};
 try{const l=localStorage.getItem("dm_lang");if(LANGS.includes(l))S.lang=l;else{const nav=(navigator.language||"en").slice(0,2);if(LANGS.includes(nav))S.lang=nav;}}catch(e){}
 
 const t=(k)=>(T[S.lang]&&T[S.lang][k]!=null?T[S.lang][k]:(T.en[k]!=null?T.en[k]:k));
@@ -1307,103 +797,59 @@ const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;"
 const $=id=>document.getElementById(id);
 const isMinor=()=>{const a=ageById(S.age);return a&&a.minor===true};
 const rangeLabel=a=>a.range==="u13"?t("u13"):a.range==="prefer"?t("prefer"):a.range;
-const isInt=v=>Number.isInteger(v);
-const vOf=(q,k)=>q.years?(k==="prefer"?en("prefer"):k+" years"):en(k);
-const lOf=(q,k)=>q.years?(k==="prefer"?t("prefer"):k+" "+t("years")):t(k);
-const EMPLOYED=["Employed full-time","Employed part-time","Self-employed"];
-// value (English) -> translated label
-const REV={};Object.keys(T.en).forEach(k=>{if(!(T.en[k] in REV))REV[T.en[k]]=k});
-const tv=v=>v==null?"—":(REV[v]?t(REV[v]):v);
 
-function flags(){
-  const a=S.a,minor=isMinor();
-  return{minor,non:a.sm_frequency==="Never",emp:EMPLOYED.includes(a.employment_status),par:!minor&&a.parent_guardian==="Yes"};
-}
 function steps(){
-  const out=[],P=(l,id)=>out.push({lvl:l,id}),L=l=>out.push({lvl:l,levelup:true});
-  const f=flags();
-  ["gender","country","education","employment_status"].forEach(i=>P(1,i));
-  if(f.emp)P(1,"work_type");P(1,"ai_use_freq");P(1,"ai_confidence");
-  if(!f.minor){P(1,"parent_guardian");if(f.par)P(1,"children_age_groups")}L(1);
-  P(2,"assoc");P(2,"first_smartphone_age");P(2,"platforms_weekly");P(2,"sm_frequency");if(!f.non)P(2,"sm_daily_time");L(2);
-  P(3,"negative_effects");P(3,"awareness_before");P(3,"impact_self");if(f.par)P(3,"impact_child");P(3,"impact_close");if(!f.non)P(3,"experienced");P(3,"severity");L(3);
-  if(!f.non)P(4,"activities");P(4,"benefits");P(4,"balance");L(4);
-  P(5,"circle_awareness");if(!f.non){P(5,"together");P(5,"closeness")}L(5);
-  if(!f.non){P(6,"reduced_use");P(6,"measures");P(6,"habits");L(6)}
-  P(7,"support");P(7,"restriction_self");P(7,"restriction_others");L(7);
-  P(8,"final_word");L(8);
+  const out=[];
+  const L1=["gender","country","education","employment_status"];
+  if(!isMinor()){L1.push("parent_guardian");if(S.a.parent_guardian==="Yes")L1.push("children_age_groups");}
+  L1.forEach(id=>out.push({lvl:1,id}));out.push({lvl:1,levelup:true});
+  ["platforms_weekly","daily_social_time"].forEach(id=>out.push({lvl:2,id}));out.push({lvl:2,levelup:true});
+  REALITY.forEach(([id])=>out.push({lvl:3,id}));out.push({lvl:3,levelup:true});
   return out;
 }
-function answered(id){
-  const q=Q[id],a=S.a;
-  switch(q.type){
-    case"deck":return q.items.every(it=>isInt(a[it[0]]));
-    case"seesaw":return q.rows.every(r=>isInt(a[r[0]]));
-    case"meter":return isInt(a[id]);
-    case"text":return true;
-    case"assoc":return S.assoc.phase==="done"||S.assoc.phase==="skipped";
-    default:{const v=a[id];return v!=null&&v!==""&&!(Array.isArray(v)&&!v.length)}
-  }
-}
-function levelDone(l){
-  if(S.screen==="done")return steps().some(s=>s.lvl===l);
-  const st=steps(),idx=st.findIndex(s=>s.lvl===l&&s.levelup);
-  return idx>=0&&S.screen==="q"&&S.pos>=idx;
-}
+const answered=id=>{const v=S.a[id];return v!=null&&v!==""&&!(Array.isArray(v)&&!v.length)};
+function levelDone(l){const st=steps();const idx=st.findIndex(s=>s.lvl===l&&s.levelup);return S.screen==="done"||(S.screen==="q"&&S.pos>idx)||(S.screen==="q"&&S.pos===idx)}
 function computeXP(){
   if(!S.consentGiven)return 0;
-  let xp=20;
-  steps().forEach(s=>{if(s.levelup)return;const q=Q[s.id];
-    if(q.type==="deck")xp+=5*q.items.filter(it=>isInt(S.a[it[0]])).length;
-    else if(q.type==="assoc")xp+=S.assoc.picks.reduce((n,p)=>n+(p&&p.ms<2500?15:10),0);
-    else if(q.type==="text"){if((S.a.final_word||"").trim())xp+=20}
-    else if(answered(s.id))xp+=10;});
-  for(let l=1;l<=8;l++)if(levelDone(l))xp+=50;
+  let xp=20;steps().forEach(s=>{if(!s.levelup&&answered(s.id))xp+=10});
+  [1,2,3].forEach(l=>{if(levelDone(l))xp+=50});
   if(S.screen==="done")xp+=30;
   return xp;
 }
-const RANKS=[[0,"r0"],[300,"r1"],[600,"r2"],[900,"r3"]];
-function rankOf(xp){if(S.screen==="done")return{key:"r3",pct:100};let r=RANKS[0];RANKS.forEach(x=>{if(xp>=x[0])r=x});const nxt=RANKS.find(x=>x[0]>xp);return{key:r[1],pct:nxt?((xp-r[0])/(nxt[0]-r[0]))*100:100}}
-function ordered(id,list,rand){
-  if(!rand)return list;
-  if(!S.order[id]){
-    const move=list.filter(o=>!FIXED_LAST.includes(o[0])),fixed=list.filter(o=>FIXED_LAST.includes(o[0]));
-    for(let i=move.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[move[i],move[j]]=[move[j],move[i]]}
-    S.order[id]=[...move,...fixed].map(o=>o[0]);
-  }
-  return S.order[id].map(k=>list.find(o=>o[0]===k));
-}
-function iconHTML(x){
-  if(typeof x==="string"&&x[0]==="@"){
-    const id=x.slice(1),a=id==="you"?ageById(S.age):ageById(id);
-    return`<span class="av">${avatarSVG(a?a.av:{mystery:true})}</span>`;
-  }
-  return`<span class="emo" aria-hidden="true">${x}</span>`;
-}
+const RANKS=[[0,"r0"],[100,"r1"],[200,"r2"],[300,"r3"]];
+function rankOf(xp){let r=RANKS[0];RANKS.forEach(x=>{if(xp>=x[0])r=x});const nxt=RANKS.find(x=>x[0]>xp);return{key:r[1],pct:nxt?((xp-r[0])/(nxt[0]-r[0]))*100:100}}
 
 /* ============================================================
    RENDER
    ============================================================ */
-const STAMP_ICONS=["🪪","📱","📡","🌞","👥","🔁","⚖️","💬"];
-const BADGES=[["bd0","🎮",()=>S.consentGiven],["bd1","🪪",()=>levelDone(1)],["bdW","🔤",()=>S.assoc.phase==="done"],["bdR","📡",()=>levelDone(3)],["bdL","⚖️",()=>levelDone(7)],["bd4","🧠",()=>S.screen==="done"]];
+function renderLangs(){
+  $("langs").innerHTML=LANGS.map(l=>`<button type="button" data-l="${l}" aria-pressed="${S.lang===l}" lang="${l}">${l.toUpperCase()}</button>`).join("");
+  $("langs").querySelectorAll("button").forEach(b=>b.onclick=()=>{S.lang=b.dataset.l;try{localStorage.setItem("dm_lang",S.lang)}catch(e){};document.documentElement.lang=S.lang;render(true)});
+}
+function renderXP(){
+  const xp=computeXP();const box=$("xp");
+  box.classList.toggle("hidden",S.screen==="welcome"||S.screen==="blocked"||S.screen==="age"||S.screen==="consent");
+  $("xpVal").textContent=xp;
+  if(xp>S.lastXP&&S.lastXP>=0){const f=document.createElement("span");f.className="xp-float";f.textContent="+"+(xp-S.lastXP);box.appendChild(f);setTimeout(()=>f.remove(),1100);box.classList.remove("bump");void box.offsetWidth;box.classList.add("bump")}
+  S.lastXP=xp;
+}
 function currentLevel(){
   if(S.screen==="age"||S.screen==="consent")return 0;
   if(S.screen==="q")return steps()[S.pos].lvl;
-  if(S.screen==="done")return 9;return -1;
+  if(S.screen==="done")return 4;return -1;
 }
 function renderJourney(){
   const j=$("journey");const cl=currentLevel();
-  j.classList.toggle("hidden",cl<0);if(cl<0)return;
-  const st=steps(),present=l=>l===0||st.some(s=>s.lvl===l);
+  j.classList.toggle("hidden",cl<0);
+  if(cl<0)return;
+  const names=["lv0","lv1","lv2","lv3"];
+  const st=steps();
   const prog=l=>{if(l<cl)return 100;if(l>cl)return 0;if(l===0)return S.screen==="consent"?60:20;
-    const ls=st.filter(s=>s.lvl===l),first=st.findIndex(s=>s.lvl===l);return Math.round(((S.pos-first)/Math.max(1,ls.length-1))*100)};
-  let html="";
-  for(let i=0;i<=8;i++){
-    const skip=!present(i),cls=skip?"skip":i<cl?"done":i===cl?"now":"";
-    html+=`<div class="jnode ${cls}" title="${esc(t("lv"+i))}${skip?" · "+esc(t("skipped")):""}"><div class="jdot">${skip?"–":i<cl?"✓":i}</div><div class="jlabel">${t("lv"+i)}</div></div><div class="jline"><i style="width:${skip?(i<cl?100:0):prog(i)}%"></i></div>`;
-  }
-  html+=`<div class="jnode ${cl>=9?"done":""}"><div class="jdot">🏁</div></div>`;
-  j.innerHTML=html;
+    const ls=st.filter(s=>s.lvl===l);const i=st.indexOf(st[S.pos]);const first=st.findIndex(s=>s.lvl===l);return Math.round(((i-first)/(ls.length-1))*100)};
+  j.innerHTML=names.map((n,i)=>{
+    const cls=i<cl?"done":i===cl?"now":"";
+    return`<div class="jnode ${cls}"><div class="jdot">${i<cl?"✓":i}</div><div class="jlabel">${t(n)}</div></div>`+(i<3?`<div class="jline"><i style="width:${prog(i)}%"></i></div>`:"");
+  }).join("")+`<div class="jline"><i style="width:${cl>=4?100:0}%"></i></div><div class="jnode ${cl>=4?"done":""}"><div class="jdot">🏁</div></div>`;
 }
 function countryLabel(){
   const c=S.a.country;if(!c)return"—";
@@ -1412,15 +858,13 @@ function countryLabel(){
   return S.a.country_other||c;
 }
 function passportData(){
-  const age=ageById(S.age),xp=computeXP(),rk=rankOf(xp);
-  const st=[1,2,3,4,5,6,7,8].map(l=>levelDone(l));
-  const skipped=[1,2,3,4,5,6,7,8].map(l=>!steps().some(s=>s.lvl===l));
-  const g=S.a.gender?(S.a.gender==="Self-describe"&&S.a.gender_self_describe?S.a.gender_self_describe:tv(S.a.gender)):"—";
-  return{age,xp,rk,st,skipped,g};
+  const age=ageById(S.age);
+  const xp=computeXP(),rk=rankOf(xp);
+  const st=[1,2,3].map(l=>levelDone(l));
+  const badges=[S.consentGiven,st[0],st[1],st[2],S.screen==="done"];
+  const g=S.a.gender?(S.a.gender==="Self-describe"&&S.a.gender_self_describe?S.a.gender_self_describe:t(Object.keys(T.en).find(k=>T.en[k]===S.a.gender&&["woman","man","nonbinary","selfdesc","prefer"].includes(k))||"prefer")):"—";
+  return{age,xp,rk,st,badges,g};
 }
-S.seen=S.seen||{};
-function stampsHTML(d,all){return`<div class="stamps">${STAMP_ICONS.map((ic,i)=>{const on=all||d.st[i],nw=on&&!S.seen[i+(all?"d":"")];if(on)S.seen[i+(all?"d":"")]=1;return`<div class="stampc ${on?"on":""} ${nw?"new":""} ${d.skipped[i]?"skip":""}" title="${esc(t("lv"+(i+1)))}">${d.skipped[i]?"–":ic}</div>`}).join("")}</div>`}
-function badgesHTML(all){return`<div class="badges">${BADGES.map(([k,ic,on])=>{const o=all?(k!=="bdW"||S.assoc.phase==="done"):on();return`<div class="badge ${o?"on":""}" data-name="${esc(t(k))}" aria-label="${esc(t(k))}${o?" ✓":""}">${ic}</div>`}).join("")}</div>`}
 function renderPassport(){
   const show=S.screen==="q";
   $("game").classList.toggle("solo",!show);
@@ -1428,6 +872,8 @@ function renderPassport(){
   $("miniPP").classList.toggle("hidden",!show);
   if(!show)return;
   const d=passportData();
+  const stampIcons=["🪪","📱","🧠"];
+  const badgeIcons=["🎮","🪪","🔭","✅","🧠"];
   $("passport").innerHTML=`
     <div class="pp-head"><div class="pp-title">${t("passport")}</div><div class="pp-id">${S.pid}</div></div>
     <div class="pp-avatar ${d.age?"has":""}">${d.age?avatarSVG(d.age.av,rangeLabel(d.age)):avatarSVG({mystery:true})}</div>
@@ -1439,14 +885,17 @@ function renderPassport(){
     </div>
     <div class="rank"><span>${t("rank")}: <b>${t(d.rk.key)}</b></span><span>${d.xp} XP</span></div>
     <div class="rankbar"><i style="width:${d.rk.pct}%"></i></div>
-    <div class="sec-t">${t("stamps")}</div>${stampsHTML(d)}
-    <div class="sec-t">${t("badges")}</div>${badgesHTML()}`;
+    <div class="sec-t">${t("stamps")}</div>
+    <div class="stamps">${d.st.map((on,i)=>`<div class="stampc ${on?"on":""}" title="${t("lv"+(i+1))}">${stampIcons[i]}</div>`).join("")}</div>
+    <div class="sec-t">${t("badges")}</div>
+    <div class="badges">${d.badges.map((on,i)=>`<div class="badge ${on?"on":""}" data-name="${esc(t("bd"+i))}" aria-label="${esc(t("bd"+i))}${on?" ✓":""}">${badgeIcons[i]}</div>`).join("")}</div>`;
   $("miniPP").innerHTML=`<div class="ma">${d.age?avatarSVG(d.age.av):avatarSVG({mystery:true})}</div>
     <div class="mtxt"><b>${t(d.rk.key)} · ${d.xp} XP</b>${esc(countryLabel()!=="—"?countryLabel():t("passport"))}</div>
-    <div class="mstamps">🏅 ${d.st.filter(Boolean).length}/${d.skipped.filter(x=>!x).length}</div>`;
+    <div class="stamps">${d.st.map((on,i)=>`<div class="stampc ${on?"on":""}">${stampIcons[i]}</div>`).join("")}</div>`;
 }
+
 function render(langOnly){
-  document.documentElement.lang=S.lang;document.onkeydown=null;
+  document.documentElement.lang=S.lang;
   renderLangs();
   const stage=$("stage");
   const fn={welcome:vWelcome,age:vAge,consent:vConsent,blocked:vBlocked,q:vQuestion,done:vDone}[S.screen];
@@ -1456,446 +905,6 @@ function render(langOnly){
   stage.appendChild(el);
   renderJourney();renderPassport();renderXP();
   if(!langOnly)window.scrollTo({top:0,behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth"});
-}
-
-/* ---------- Welcome ---------- */
-function vWelcome(){
-  const lv=[["🎟️"],["🪪"],["📱"],["📡"],["🌞"],["👥"],["🔁"],["⚖️"],["💬"]];
-  const el=h(`<section class="card hero">
-    <div>
-      <div class="eyebrow">${t("w_eyebrow")}</div>
-      <h1>${t("w_title")}</h1>
-      <p>${t("w_text")}</p>
-      <div class="meta-row"><span class="pill">${t("m1")}</span><span class="pill">${t("m2")}</span><span class="pill">${t("m3")}</span><span class="pill">${t("m4")}</span></div>
-      <button class="btn big" id="go" style="margin-top:14px">${t("start")}</button>
-    </div>
-    <div class="brain">${brainSVG()}</div>
-    <div class="levels" style="grid-column:1/-1">
-      ${lv.map((l,i)=>`<div class="lvl"><span class="e">${l[0]}</span><div class="n">${t("level").toUpperCase()} 0${i}</div><div class="t">${t("lv"+i)}</div><div class="d">${t("lv"+i+"d")}</div></div>`).join("")}
-      <div class="lvl bonus"><span class="e">🔤</span><div class="n">${t("bonus").toUpperCase()}</div><div class="t">${t("as_title").split(":").pop().trim()}</div><div class="d">${t("bonus_d")}</div></div>
-    </div>
-  </section>`);
-  el.querySelector("#go").onclick=()=>{S.screen="age";S.started=S.started||Date.now();render()};
-  return el;
-}
-
-/* ---------- Questions ---------- */
-function hintFor(q){
-  switch(q.type){
-    case"single":case"gender":return t("pick1");
-    case"multi":return q.max?t("pick_max").replace("{n}",q.max):t("pickN");
-    case"meter":return t("meter_hint");case"deck":return matchMedia("(hover:hover) and (pointer:fine)").matches?t("deck_hint"):t("deck_hint").split(/[.!。]\s/)[0]+".";case"seesaw":return t("seesaw_hint");
-    case"text":return t("final_h");case"platforms":return t("plat_h");case"time":return t("time_h");case"country":return t("country_h");
-    default:return"";
-  }
-}
-function vQuestion(){
-  const st=steps();if(S.pos>=st.length)S.pos=st.length-1;
-  const s=st[S.pos];
-  if(s.levelup)return vLevelUp(s.lvl);
-  const q=Q[s.id];
-  const qs=st.filter(x=>!x.levelup);const n=qs.indexOf(s)+1;
-  const lvlQs=st.filter(x=>x.lvl===s.lvl&&!x.levelup);const ln=lvlQs.indexOf(s)+1;
-  const el=h(`<section class="card q-${q.type}">
-    <div class="qhead"><div class="eyebrow">${q.type==="assoc"?"🔤 "+t("bonus"):t("level")+" 0"+s.lvl+" · "+t("lv"+s.lvl)}</div><div class="qcount">${t("qOf").replace("{n}",n).replace("{t}",qs.length)}</div></div>
-    <div class="qbar"><i style="width:${(ln-1)/lvlQs.length*100}%"></i></div>
-    ${q.intro?`<div class="intro-card"><span>💭</span><p>${esc(t(q.intro))}</p></div>`:""}
-    ${q.type==="assoc"?"":`<div class="question" id="qtitle">${esc(t(q.key))}</div><p class="hint">${hintFor(q)}</p>`}
-    <div id="body"></div>
-    <div class="nav"><button class="btn ghost" id="bk">${t("back")}</button><button class="btn" id="nx">${t("next")}</button></div>
-    <div id="err" class="status hidden" role="alert"></div>
-    <p class="note">${t("noWrong")}</p>
-  </section>`);
-  const body=el.querySelector("#body"),nx=el.querySelector("#nx");
-  const refresh=()=>{nx.disabled=!answered(s.id);if(q.type==="text")nx.textContent=(S.a.final_word||"").trim()?t("send_idea"):t("skip");renderPassport();renderXP()};
-  const advance=()=>{if(S.screen!=="q"||steps()[S.pos]!==undefined&&steps()[S.pos].id!==s.id)return;S.pos++;render()};
-  ({single:qSingle,multi:qMulti,meter:qMeter,deck:qDeck,seesaw:qSeesaw,gender:qGender,country:qCountry,platforms:qPlatforms,time:qTime,text:qText,assoc:qAssoc})[q.type](body,s.id,q,refresh,advance,el);
-  refresh();
-  nx.onclick=()=>{S.pos++;render()};
-  el.querySelector("#bk").onclick=()=>{if(S.pos===0){S.screen="consent"}else S.pos--;render()};
-  return el;
-}
-
-function qSingle(body,id,q,refresh,advance){
-  const vis=q.visual;
-  const wrap=h(`<div class="${vis==="timeline"?"timeline":"tiles"+(vis==="pulse"?" pulse-tiles":"")}" role="group">${vis==="timeline"?'<div class="tl-row"></div><div class="tl-extra"></div>':""}</div>`);
-  if(q.big&&!vis)wrap.style.gridTemplateColumns="repeat(auto-fill,minmax(150px,1fr))";
-  const btns=[];
-  q.opts.forEach((o,i)=>{
-    const [k,ic,extra]=o,val=vOf(q,k),sel=S.a[id]===val;
-    let inner;
-    if(vis==="timeline"&&!extra)inner=`<span class="tl-dot"><span style="font-size:${15+i*5}px">${ic}</span></span><span class="tl-lbl">${esc(lOf(q,k))}</span>`;
-    else if(vis==="pulse")inner=`<span class="pulse">${ic>0?Array.from({length:ic},(_,j)=>`<i style="animation-duration:${(7-ic)*0.35}s;animation-delay:${j*0.12}s"></i>`).join(""):'<span class="zz">💤</span>'}</span><span>${esc(lOf(q,k))}</span>`;
-    else inner=`<span class="ico" aria-hidden="true">${ic}</span><span>${esc(lOf(q,k))}</span>`;
-    const cls=vis==="timeline"&&!extra?"tl-node":`tile ${q.big||vis==="pulse"?"":"row"}`;
-    const b=h(`<button type="button" class="${cls}" aria-pressed="${sel}">${inner}</button>`);
-    b.onclick=()=>{S.a[id]=val;btns.forEach(x=>x.setAttribute("aria-pressed","false"));b.setAttribute("aria-pressed","true");refresh();setTimeout(advance,380)};
-    btns.push(b);
-    if(vis==="timeline")wrap.querySelector(extra?".tl-extra":".tl-row").appendChild(b);else wrap.appendChild(b);
-  });
-  body.appendChild(wrap);
-}
-
-function qMulti(body,id,q,refresh){
-  const opts=ordered(id,q.opts,q.rand),ex=(q.excl||[]).map(k=>vOf(q,k));
-  const byVal={};opts.forEach(o=>byVal[vOf(q,o[0])]=o);
-  const wrap=h(`<div>${q.max?`<div class="slots-wrap"><div class="qcount">${t("your_picks").replace("{n}",q.max)}</div><div class="slots"></div></div>`:""}
-    <div class="tiles" role="group"></div>
-    ${q.other?`<div class="other-box hidden"><input type="text" maxlength="120" placeholder="${esc(t("specify"))}" aria-label="${esc(t("specify"))}"></div>`:""}
-    <div class="toast hidden" role="status"></div></div>`);
-  const tiles=wrap.querySelector(".tiles"),sel=()=>S.a[id]||[];
-  opts.forEach(([k,ic])=>{
-    const v=vOf(q,k);
-    const b=h(`<button type="button" class="tile row" data-v="${esc(v)}"><span class="ico" aria-hidden="true">${ic}</span><span>${esc(lOf(q,k))}</span></button>`);
-    b.onclick=()=>{
-      let a=sel();
-      if(a.includes(v))a=a.filter(x=>x!==v);
-      else if(ex.includes(v))a=[v];
-      else{a=a.filter(x=>!ex.includes(x));
-        if(q.max&&a.length>=q.max){b.classList.remove("shake");void b.offsetWidth;b.classList.add("shake");toast(t("max_reached").replace("{n}",q.max));return}
-        a=[...a,v];}
-      S.a[id]=a;upd();refresh();
-    };
-    tiles.appendChild(b);
-  });
-  const tst=wrap.querySelector(".toast");let tt;
-  function toast(m){tst.textContent=m;tst.classList.remove("hidden");clearTimeout(tt);tt=setTimeout(()=>tst.classList.add("hidden"),2200)}
-  const ob=wrap.querySelector(".other-box");
-  if(ob){const inp=ob.querySelector("input");inp.value=S.a[q.other]||"";inp.oninput=()=>{S.a[q.other]=inp.value}}
-  function upd(){
-    const a=sel();
-    tiles.querySelectorAll(".tile").forEach(b=>b.setAttribute("aria-pressed",a.includes(b.dataset.v)));
-    if(ob)ob.classList.toggle("hidden",!a.includes("Other"));
-    if(q.max){
-      const sl=wrap.querySelector(".slots");const picks=a.filter(x=>!ex.includes(x));
-      sl.innerHTML=Array.from({length:q.max},(_,i)=>{const v=picks[i];if(!v)return`<div class="slot empty">${i+1}</div>`;const o=byVal[v];return`<button type="button" class="slot full" data-v="${esc(v)}"><b>${i+1}</b><span class="ico">${o[1]}</span><span class="sl">${esc(lOf(q,o[0]))}</span><span class="x">✕</span></button>`}).join("");
-      if(a.length&&ex.includes(a[0]))sl.innerHTML=`<div class="slot full wide"><span class="ico">${byVal[a[0]][1]}</span><span class="sl">${esc(lOf(q,byVal[a[0]][0]))}</span></div>`;
-      sl.querySelectorAll("button.slot").forEach(s=>s.onclick=()=>{S.a[id]=sel().filter(x=>x!==s.dataset.v);upd();refresh()});
-    }
-  }
-  upd();body.appendChild(wrap);
-}
-
-function scaleColor(scale,v){return PAL[SCALE_PAL[scale]][v-1]}
-function qMeter(body,id,q,refresh,advance){
-  const pre=SCALES[q.scale];
-  const wrap=h(`<div class="meter"><div class="meter-icon" aria-hidden="true">${q.icon}</div><div class="meter-bars" role="group" aria-label="${esc(t(q.key))}"></div><div class="meter-val"></div><div class="chip-row"></div></div>`);
-  const bars=wrap.querySelector(".meter-bars");
-  for(let i=1;i<=5;i++){const b=h(`<button type="button" class="mbar" style="--h:${34+i*16}px;--c:${scaleColor(q.scale,i)}" aria-label="${i} – ${esc(t(pre+i))}"><b>${i}</b><span>${esc(t(pre+i))}</span></button>`);b.onclick=()=>{S.a[id]=i;upd();refresh();setTimeout(advance,450)};bars.appendChild(b)}
-  (q.extras||[]).forEach(([code,key])=>{const c=h(`<button type="button" class="chip" data-c="${code}">${esc(t(key))}</button>`);c.onclick=()=>{S.a[id]=code;upd();refresh();setTimeout(advance,450)};wrap.querySelector(".chip-row").appendChild(c)});
-  function upd(){
-    const v=S.a[id];
-    bars.querySelectorAll(".mbar").forEach((b,i)=>{b.classList.toggle("lit",isInt(v)&&v>0&&i<v);b.setAttribute("aria-pressed",v===i+1)});
-    wrap.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",+c.dataset.c===v));
-    const ic=wrap.querySelector(".meter-icon");ic.style.transform=`scale(${isInt(v)&&v>0?0.85+v*0.12:0.85})`;ic.style.filter=isInt(v)&&v>0?`drop-shadow(0 0 ${v*5}px ${scaleColor(q.scale,v)})`:"grayscale(.6)";
-    wrap.querySelector(".meter-val").textContent=isInt(v)?(v>0?t(pre+v):t((q.extras.find(e=>e[0]===v)||[0,"prefer"])[1])):"";
-  }
-  upd();body.appendChild(wrap);
-}
-
-function qDeck(body,id,q,refresh){
-  const items=ordered(id,q.items,q.rand),pre=SCALES[q.scale],faces=FACES[q.scale];
-  const firstOpen=()=>{const i=items.findIndex(it=>!isInt(S.a[it[0]]));return i<0?items.length:i};
-  if(S.deck[id]==null||S.deck[id]>items.length)S.deck[id]=firstOpen();
-  const ex=q.extras||[];
-  const valLabel=v=>v>0?t(pre+v):t((ex.find(e=>e[0]===v)||[0,"x_notsure"])[1]);
-  const wrap=h(`<div class="deck-wrap ${q.visual==="thermo"?"has-thermo":""}">
-    <div class="deck-main"><div class="deck-dots"></div><div class="deck-stage"></div>
-    ${q.applyAll?`<div class="chip-row"><button type="button" class="chip all" id="all">⤵ ${esc(t(ex.find(e=>e[0]===q.applyAll)[1]))} · ${t("apply_all")}</button></div>`:""}</div>
-    ${q.visual==="thermo"?`<div class="thermo" aria-hidden="true"></div>`:""}</div>`);
-  const stage=wrap.querySelector(".deck-stage"),dots=wrap.querySelector(".deck-dots");
-  function draw(){
-    const i=S.deck[id];
-    dots.innerHTML=items.map((it,j)=>`<button type="button" class="dd ${isInt(S.a[it[0]])?"on":""} ${j===i?"cur":""}" data-j="${j}" aria-label="${esc(t(it[1]))}"></button>`).join("");
-    if(i<items.length){
-      const it=items[i],cur=S.a[it[0]];
-      stage.innerHTML=`<div class="dcard"><div class="dc-top">${iconHTML(it[2])}<span class="qcount">${i+1} / ${items.length}</span></div>
-        <div class="dc-text">${esc(t(it[1]))}</div>
-        <div class="scale" role="group" aria-label="${esc(t(it[1]))}">${[1,2,3,4,5].map(v=>`<button type="button" class="sb" data-v="${v}" style="--c:${scaleColor(q.scale,v)}" aria-pressed="${cur===v}"><b>${faces?faces[v-1]:v}</b><span>${esc(t(pre+v))}</span></button>`).join("")}</div>
-        <div class="scale-ends"><span>← ${esc(t(pre+1))}</span><span>${esc(t(pre+5))} →</span></div>
-        ${ex.length?`<div class="chip-row">${ex.map(([c,k])=>`<button type="button" class="chip" data-v="${c}" aria-pressed="${cur===c}">${esc(t(k))}</button>`).join("")}</div>`:""}</div>`;
-      stage.querySelectorAll("[data-v]").forEach(b=>b.onclick=()=>set(+b.dataset.v,b));
-    }else{
-      stage.innerHTML=`<div class="deck-sum"><p class="sum-h">✅ ${t("deck_done")}</p>${items.map((it,j)=>{const v=S.a[it[0]];return`<button type="button" class="sum-row" data-j="${j}">${iconHTML(it[2])}<span class="st">${esc(t(it[1]))}</span><span class="sv" style="--c:${v>0?scaleColor(q.scale,v):"#56708a"}">${v>0?(faces?faces[v-1]+" ":"")+esc(valLabel(v)):esc(valLabel(v))}</span></button>`}).join("")}</div>`;
-    }
-    wrap.querySelectorAll("[data-j]").forEach(b=>b.onclick=()=>{S.deck[id]=+b.dataset.j;draw()});
-    if(q.visual==="thermo")drawThermo();
-  }
-  function set(v,btn){
-    const i=S.deck[id];if(i>=items.length)return;
-    S.a[items[i][0]]=v;refresh();
-    if(btn){stage.querySelectorAll("[data-v]").forEach(b=>b.setAttribute("aria-pressed",b===btn))}
-    const card=stage.querySelector(".dcard");if(card)card.classList.add("out");
-    if(q.visual==="thermo")drawThermo();
-    setTimeout(()=>{let n=items.findIndex((it,j)=>j>i&&!isInt(S.a[it[0]]));if(n<0)n=firstOpen();S.deck[id]=n;draw()},280);
-  }
-  function drawThermo(){
-    const th=wrap.querySelector(".thermo");
-    let html=`<div class="th-tube">`;
-    for(let v=5;v>=1;v--){
-      const here=items.filter(it=>S.a[it[0]]===v);
-      html+=`<div class="th-lvl" style="--c:${scaleColor(q.scale,v)}"><span class="th-n">${v}</span><span class="th-l">${esc(t(pre+v))}</span><span class="th-tok">${here.map(it=>`<span class="tok" title="${esc(t(it[1]))}">${iconHTML(it[2])}</span>`).join("")}</span></div>`;
-    }
-    const wait=items.filter(it=>!isInt(S.a[it[0]])||S.a[it[0]]<0);
-    html+=`</div><div class="th-wait">${wait.map(it=>`<span class="tok ${S.a[it[0]]<0?"ns":""}" title="${esc(t(it[1]))}">${iconHTML(it[2])}</span>`).join("")}</div>`;
-    th.innerHTML=html;
-  }
-  const all=wrap.querySelector("#all");
-  if(all)all.onclick=()=>{items.forEach(it=>S.a[it[0]]=q.applyAll);S.deck[id]=items.length;refresh();draw()};
-  document.onkeydown=e=>{if(S.deck[id]<items.length&&/^[1-5]$/.test(e.key)&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName)){const b=stage.querySelector(`.sb[data-v="${e.key}"]`);set(+e.key,b)}};
-  draw();body.appendChild(wrap);
-}
-
-function qSeesaw(body,id,q,refresh){
-  const pre=SCALES.bal;
-  const wrap=h(`<div class="seesaws"></div>`);
-  q.rows.forEach(([col,key])=>{
-    const r=h(`<div class="ss-row"><div class="ss-title">${esc(t(key))}</div>
-      <svg viewBox="0 36 340 100" class="ss" aria-hidden="true">
-        <polygon points="170,92 150,132 190,132" fill="#2b5f80" stroke="#9be9f2" stroke-width="1.5"/>
-        <g class="plank" style="transform-origin:170px 90px">
-          <rect x="30" y="84" width="280" height="10" rx="5" fill="#E0BE86"/>
-          <g class="pan-l"><path d="M40 84L46 54H90L96 84Z" fill="#f07a8633" stroke="#F07A86" stroke-width="2"/><text x="68" y="76" text-anchor="middle" font-size="22" class="wl">⚠️</text></g>
-          <g class="pan-r"><path d="M244 84L250 54H294L300 84Z" fill="#22e4d433" stroke="#22E4D4" stroke-width="2"/><text x="272" y="76" text-anchor="middle" font-size="22" class="wr">✨</text></g>
-        </g>
-      </svg>
-      <div class="ss-labels"><span class="neg">⚠️ ${t("side_neg")}</span><span class="ss-val"></span><span class="pos">${t("side_pos")} ✨</span></div>
-      <div class="scale s5" role="group" aria-label="${esc(t(key))}">${[1,2,3,4,5].map(v=>`<button type="button" class="sb" data-v="${v}" style="--c:${scaleColor("bal",v)}"><b>${["⚠️⚠️","⚠️","⚖️","✨","✨✨"][v-1]}</b><span>${esc(t(pre+v))}</span></button>`).join("")}</div>
-      <div class="chip-row"><button type="button" class="chip" data-v="-1">${t("x_notsure")}</button></div></div>`);
-    r.querySelectorAll("[data-v]").forEach(b=>b.onclick=()=>{S.a[col]=+b.dataset.v;upd();refresh()});
-    function upd(){
-      const v=S.a[col];
-      r.querySelectorAll("[data-v]").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.v===v));
-      const ang=isInt(v)&&v>0?(v-3)*7:0;
-      const pl=r.querySelector(".plank");pl.style.transform=`rotate(${ang}deg)`;pl.classList.toggle("wobble",!isInt(v)||v<0);
-      r.querySelector(".wl").setAttribute("font-size",isInt(v)&&v>0?16+(5-v)*4:22);
-      r.querySelector(".wr").setAttribute("font-size",isInt(v)&&v>0?16+(v-1)*4:22);
-      r.querySelector(".ss-val").textContent=isInt(v)?(v>0?t(pre+v):t("x_notsure")):"";
-    }
-    upd();wrap.appendChild(r);
-  });
-  body.appendChild(wrap);
-}
-
-function qTime(body,id,q,refresh){
-  const NS=en("tm7");
-  const idx=()=>TIME_KEYS.findIndex(k=>en(k)===S.a[id]);
-  const wrap=h(`<div class="gauge">
-    <svg viewBox="0 0 240 140" aria-hidden="true"><defs><linearGradient id="gg" x1="0" x2="1"><stop offset="0" stop-color="#22E4D4"/><stop offset=".55" stop-color="#E0BE86"/><stop offset="1" stop-color="#F09A90"/></linearGradient></defs>
-      <path d="M30 120A90 90 0 0 1 210 120" stroke="#13304a" stroke-width="18" fill="none" stroke-linecap="round"/>
-      <path id="arc" d="M30 120A90 90 0 0 1 210 120" stroke="url(#gg)" stroke-width="18" fill="none" stroke-linecap="round" pathLength="100" stroke-dasharray="0 100" style="transition:stroke-dasharray .4s"/>
-      <g id="needle" style="transform-origin:120px 120px;transition:transform .4s"><path d="M120 120L120 44" stroke="#EAF4F8" stroke-width="4" stroke-linecap="round"/><circle cx="120" cy="120" r="9" fill="#EAF4F8"/></g>
-    </svg>
-    <div class="emo" id="emo">⏳</div><div class="val" id="val"></div>
-    <input type="range" min="0" max="5" step="1" aria-label="${esc(t(q.key))}">
-    <div class="ticks"></div>
-    <div class="chip-row"><button type="button" class="chip" id="ns">🤔 ${t("tm7")}</button></div>
-  </div>`);
-  const r=wrap.querySelector("input"),ticks=wrap.querySelector(".ticks");
-  TIME_KEYS.forEach((k,i)=>{const b=h(`<button type="button">${esc(t(k))}</button>`);b.onclick=()=>set(i);ticks.appendChild(b)});
-  r.oninput=()=>set(+r.value);
-  wrap.querySelector("#ns").onclick=()=>{S.a[id]=NS;upd();refresh()};
-  function set(i){S.a[id]=en(TIME_KEYS[i]);upd();refresh()}
-  function upd(){
-    const i=idx(),ns=S.a[id]===NS;r.value=i<0?2:i;
-    wrap.querySelector("#arc").setAttribute("stroke-dasharray",i<0?"0 100":`${(i+1)/6*100} 100`);
-    wrap.querySelector("#needle").style.transform=`rotate(${i<0?0:-90+(i+0.5)/6*180}deg)`;
-    wrap.querySelector("#emo").textContent=ns?"🤔":i<0?"⏳":TIME_EMO[i];
-    wrap.querySelector("#val").textContent=ns?t("tm7"):i<0?t("time_move"):t(TIME_KEYS[i]);
-    ticks.querySelectorAll("button").forEach((b,j)=>b.setAttribute("aria-pressed",j===i));
-    wrap.querySelector("#ns").setAttribute("aria-pressed",ns);
-  }
-  upd();body.appendChild(wrap);
-}
-
-function qText(body,id,q,refresh){
-  const w=h(`<div class="wish"><div class="wish-ico" aria-hidden="true">🔮</div>
-    <textarea maxlength="1000" rows="5" placeholder="${esc(t("final_ph"))}" aria-label="${esc(t(q.key))}"></textarea>
-    <div class="qcount wc"><span>0</span> / 1000 ${t("chars")}</div></div>`);
-  const ta=w.querySelector("textarea"),cc=w.querySelector(".wc span");
-  ta.value=S.a.final_word||"";cc.textContent=ta.value.length;
-  ta.oninput=()=>{S.a.final_word=ta.value;cc.textContent=ta.value.length;w.classList.toggle("glow",ta.value.trim().length>0);refresh()};
-  w.classList.toggle("glow",ta.value.trim().length>0);
-  body.appendChild(w);
-}
-
-function qAssoc(body,id,q,refresh,advance){
-  const A=S.assoc;
-  const box=h(`<div class="assoc"></div>`);body.appendChild(box);
-  let timer;
-  function draw(){
-    clearTimeout(timer);
-    if(A.phase==="intro"){
-      box.innerHTML=`<div class="as-intro"><div class="as-big">🔤⚡</div><h2>${t("as_title")}</h2><p>${t("as_intro")}</p>
-        <div class="as-prev">${ASSOC_PROMPTS.map(p=>`<span class="pill">${p[2]} ${esc(t(p[1]))}</span>`).join("")}</div>
-        <div class="as-btns"><button type="button" class="btn big" id="play">${t("as_play")}</button><button type="button" class="btn ghost" id="skp">${t("as_skip")}</button></div></div>`;
-      box.querySelector("#play").onclick=()=>{A.phase="play";A.round=0;A.picks=[];draw()};
-      box.querySelector("#skp").onclick=()=>{A.phase="skipped";A.picks=[];refresh();advance()};
-    }else if(A.phase==="play"){
-      const p=ASSOC_PROMPTS[A.round];
-      const words=ASSOC_WORDS.slice();for(let i=words.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[words[i],words[j]]=[words[j],words[i]]}
-      box.innerHTML=`<div class="as-head"><span class="eyebrow">${t("as_round").replace("{n}",A.round+1)}</span>
-        <svg class="ring" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="18" fill="none" stroke="#1b3a57" stroke-width="5"/><circle class="rp" cx="22" cy="22" r="18" fill="none" stroke="#22E4D4" stroke-width="5" pathLength="100" stroke-dasharray="100 100" transform="rotate(-90 22 22)"/></svg></div>
-        <div class="as-prompt"><span class="pe">${p[2]}</span><span class="pw">${esc(t(p[1]))}</span></div>
-        <div class="bubbles">${words.map((w,i)=>`<button type="button" class="bubble" data-w="${w}" style="--d:${(i%5)*0.4}s;--r:${(i%3-1)*2}deg">${esc(t(w))}</button>`).join("")}</div>
-        <div class="as-fb" aria-live="polite"></div>`;
-      const start=performance.now();let locked=false;
-      box.querySelectorAll(".bubble").forEach(b=>b.onclick=()=>{
-        if(locked)return;locked=true;const ms=Math.round(performance.now()-start);
-        A.picks[A.round]={k:b.dataset.w,ms};
-        b.classList.add("picked");box.querySelectorAll(".bubble").forEach(x=>{if(x!==b)x.classList.add("fade")});
-        box.querySelector(".as-fb").innerHTML=`<b>${ms<2500?t("as_fast"):t("as_nice")}</b> +${ms<2500?15:10} XP · ${(ms/1000).toFixed(1)}s`;
-        refresh();
-        timer=setTimeout(()=>{A.round++;if(A.round>=3){A.phase="done";refresh()}draw()},850);
-      });
-    }else{
-      box.innerHTML=`<div class="as-intro"><div class="as-big">${A.phase==="done"?"🏆":"⏭️"}</div><h2>${A.phase==="done"?t("as_trail"):t("skipped")}</h2>
-        ${A.phase==="done"?`<div class="trail">${ASSOC_PROMPTS.map((p,i)=>`<div class="tr-row"><span class="pill">${p[2]} ${esc(t(p[1]))}</span><span class="arrow">→</span><span class="tr-w">${esc(t(A.picks[i].k))}</span><span class="qcount">${(A.picks[i].ms/1000).toFixed(1)}s</span></div>`).join("")}</div>`:""}
-        <div class="as-btns"><button type="button" class="btn ghost" id="again">🔁 ${t("as_again")}</button></div></div>`;
-      box.querySelector("#again").onclick=()=>{A.phase="play";A.round=0;A.picks=[];refresh();draw()};
-    }
-  }
-  draw();
-}
-
-/* ---------- Level up ---------- */
-function vLevelUp(l){
-  const el=h(`<section class="card levelup">
-    <div class="eyebrow">${t("level")} 0${l} · ${t("lv"+l)}</div>
-    <div class="big-stamp">${STAMP_ICONS[l-1]}<small>${esc(t("lv"+l).toUpperCase())}</small></div>
-    <h2>${t("lu_title")}</h2>
-    <div class="bonus">${t("lu_bonus")}</div>
-    <p style="color:var(--muted);max-width:46ch;margin:10px auto 0">${t("lu"+l)}</p>
-    <div class="nav" style="justify-content:center;gap:14px"><button class="btn ghost" id="bk">${t("back")}</button><button class="btn big" id="nx">${l===8?t("lu_submit"):t("lu_next")}</button></div>
-    <div id="err" class="status hidden" role="alert"></div>
-  </section>`);
-  el.querySelector("#bk").onclick=()=>{S.pos--;render()};
-  el.querySelector("#nx").onclick=()=>{if(l===8)submit(el);else{S.pos++;render()}};
-  setTimeout(()=>burst(60),150);
-  return el;
-}
-
-/* ---------- Submit ---------- */
-function fieldsOf(id,visible){
-  const q=Q[id],a=S.a,o={};
-  const sc=k=>visible&&isInt(a[k])?a[k]:null;
-  switch(q.type){
-    case"gender":o.gender=visible?a.gender||null:null;o.gender_self_describe=visible&&a.gender==="Self-describe"?((a.gender_self_describe||"").trim()||null):null;break;
-    case"country":o.country=a.country_code?en(a.country_code):(a.country_group==="prefer_not"?"Prefer not to say":null);o.country_group=a.country_group||null;o.country_other=a.country_other||null;break;
-    case"single":case"time":o[id]=visible?a[id]||null:null;break;
-    case"meter":o[id]=sc(id);break;
-    case"multi":{const arr=visible?(a[id]||[]):null;o[id]=arr;if(q.other)o[q.other]=arr&&arr.includes("Other")?((a[q.other]||"").trim()||null):null;break}
-    case"platforms":o[id]=visible?(a[id]||[]):null;break;
-    case"deck":q.items.forEach(it=>o[it[0]]=sc(it[0]));break;
-    case"seesaw":q.rows.forEach(r=>o[r[0]]=sc(r[0]));break;
-    case"text":o[id]=visible?((a[id]||"").trim().slice(0,1000)||null):null;break;
-    case"assoc":ASSOC_PROMPTS.forEach((p,i)=>{const pk=visible&&S.assoc.phase==="done"?S.assoc.picks[i]:null;o[p[0]]=pk?en(pk.k):null;o[p[0]+"_ms"]=pk?pk.ms:null});break;
-  }
-  return o;
-}
-function buildPayload(){
-  const vis=new Set(steps().filter(s=>!s.levelup).map(s=>s.id));
-  const p={survey_version:CONFIG.SURVEY_VERSION,lang:S.lang,
-    age_group:S.age==="prefer"?"Prefer not to say":S.age,
-    consent_type:isMinor()?"minor_with_guardian_consent":"adult"};
-  Object.keys(Q).forEach(id=>Object.assign(p,fieldsOf(id,vis.has(id))));
-  p.duration_seconds=S.started?Math.round((Date.now()-S.started)/1000):null;
-  return p;
-}
-async function submit(el){
-  const btn=el.querySelector("#nx"),err=el.querySelector("#err");
-  btn.disabled=true;btn.textContent=t("submitting");
-  const payload=buildPayload();S.payload=payload;
-  if(!CONFIG.LIVE){S.submitted=false;finish();return}
-  try{
-    const r=await fetch(CONFIG.SUPABASE_URL.replace(/\/+$/,"")+"/rest/v1/"+CONFIG.TABLE,{method:"POST",headers:{"Content-Type":"application/json","apikey":CONFIG.SUPABASE_KEY,"Authorization":"Bearer "+CONFIG.SUPABASE_KEY,"Prefer":"return=minimal"},body:JSON.stringify(payload)});
-    if(!r.ok){let m="";try{m=(await r.json()).message||""}catch(_){}throw new Error("HTTP "+r.status+(m?": "+m:""))}
-    S.submitted=true;finish();
-  }catch(e){err.textContent=t("err_save")+" ("+e.message+")";err.classList.remove("hidden");btn.disabled=false;btn.textContent=t("retry")}
-}
-function finish(){S.screen="done";render();setTimeout(()=>burst(220),200)}
-
-/* ---------- Done ---------- */
-function archetype(){
-  const a=S.a;
-  if(a.sm_frequency==="Never")return"ar_min";
-  if(a.reduced_use==="Yes")return"ar1";
-  const n=["habit_n1","habit_n2","habit_n3"].map(k=>a[k]).filter(v=>v>0);
-  const hn=n.length?n.reduce((x,y)=>x+y,0)/n.length:0;
-  if(hn>=3.5)return"ar2";
-  if(a.balance_personal>=4)return"ar4";
-  return"ar3";
-}
-function snapshot(){
-  const a=S.a,items=[];
-  const apps=(a.platforms_weekly||[]).filter(x=>x!=="None of these").length;
-  items.push(["📱",t("res_apps"),String(apps)]);
-  if(a.first_smartphone_age)items.push(["🗓️",t("res_phone"),tv(a.first_smartphone_age)]);
-  items.push(["⏱️",t("res_time"),a.sm_frequency==="Never"?tv("Never"):tv(a.sm_daily_time)]);
-  if(S.assoc.phase==="done")items.push(["🔤",t("res_word"),t(S.assoc.picks[0].k)]);
-  const neg=(a.negative_effects||[]).filter(x=>x!=="None of these");if(neg.length)items.push(["📡",t("res_concern"),neg[0]==="Other"&&a.negative_effects_other?a.negative_effects_other:tv(neg[0])]);
-  const ben=(a.benefits||[]).filter(x=>x!=="None of these");if(ben.length)items.push(["🌞",t("res_benefit"),tv(ben[0])]);
-  if(isInt(a.balance_personal))items.push(["⚖️",t("res_balance"),a.balance_personal>0?t("sc_bal"+a.balance_personal):t("x_notsure")]);
-  return items;
-}
-function lens(){const s=S.a.severity_self,te=S.a.severity_teens;if(!(s>0&&te>0))return null;return te>s?"lens_more":te===s?"lens_same":"lens_less"}
-function vDone(){
-  const d=passportData();const ar=archetype();const ln=lens();
-  const el=h(`<section class="card">
-    <div style="text-align:center">
-      <div class="eyebrow">${t("d_eyebrow")}</div>
-      <h2 style="font-size:clamp(28px,4vw,42px);margin:10px 0 6px">${t("d_title")}</h2>
-      <p style="color:var(--muted);margin:0">${t("d_text")}</p>
-      ${CONFIG.LIVE?"":`<p class="note" style="color:var(--gold)">⚠ ${t("d_preview")}</p>`}
-    </div>
-    <div class="done-grid">
-      <div class="pcard">
-        <div class="pp-head"><div class="pp-title">${t("passport")}</div><div class="pp-id">${S.pid}</div></div>
-        <div class="pc-top">
-          <div class="pp-avatar has" style="margin:0;width:110px;height:110px;flex:0 0 auto">${d.age?avatarSVG(d.age.av):""}</div>
-          <div><div class="qcount">${t("profile")}</div><div class="arch">${t(ar)}</div><div style="font-size:14px;color:#cfe0ea">${t(ar==="ar_min"?"ar_mind":ar+"d")}</div></div>
-        </div>
-        <div class="pp-rows" style="grid-template-columns:1fr 1fr">
-          <div class="pp-row"><span>${t("pp_age")}</span><b>${d.age?esc(rangeLabel(d.age)):"—"}</b></div>
-          <div class="pp-row"><span>${t("pp_home")}</span><b>${esc(countryLabel())}</b></div>
-          <div class="pp-row"><span>${t("rank")}</span><b style="color:var(--teal)">${t(d.rk.key)}</b></div>
-          <div class="pp-row"><span>XP</span><b>${d.xp}</b></div>
-        </div>
-        ${stampsHTML(d,true)}
-        <div style="margin-top:12px">${badgesHTML(true)}</div>
-      </div>
-      <div>
-        <div class="sec-t" style="margin-top:0">${t("res_title")}</div>
-        <div class="snap">${snapshot().map(([ic,l,v])=>`<div class="snap-i"><span class="si">${ic}</span><span class="sl">${esc(l)}</span><b>${esc(v)}</b></div>`).join("")}</div>
-        ${ln?`<div class="lens"><span>🔍</span><div><b>${t("res_lens")}</b><p>${t(ln)}</p></div></div>`:""}
-      </div>
-    </div>
-    <div class="sec-t">${t("facts_t")}</div>
-    <div class="facts">${[1,2,3].map(i=>`<button type="button" class="fact ${S.flipped[i]?"flip":""}" data-i="${i}"><div class="fact-in"><div class="fside ffront"><span class="q">${["","🛡️","🔐","🇪🇺"][i]}</span>${t("flip")}</div><div class="fside fback">${esc(t("f"+i))}<small>${esc(t("f"+i+"s"))}</small></div></div></button>`).join("")}</div>
-    <div class="support">💬 ${t("support_line")} <a href="https://better-internet-for-kids.europa.eu/" target="_blank" rel="noopener">better-internet-for-kids.europa.eu</a></div>
-    <button class="btn ghost" id="share" style="margin-top:14px;width:100%">🔗 ${t("share")}</button>
-    ${CONFIG.LIVE?"":`<details class="dev"><summary>${t("dev")}</summary><pre>${esc(JSON.stringify(S.payload||buildPayload(),null,2))}</pre></details>`}
-  </section>`);
-  el.querySelectorAll(".fact").forEach(f=>f.onclick=()=>{f.classList.toggle("flip");S.flipped[f.dataset.i]=f.classList.contains("flip")});
-  el.querySelector("#share").onclick=async e=>{
-    const url=location.href.split("#")[0];
-    try{if(navigator.share){await navigator.share({title:"The Digital Mind",url});return}}catch(_){return}
-    try{await navigator.clipboard.writeText(url);e.target.textContent="✓ "+t("copied")}catch(_){}
-  };
-  return el;
-}
-
-/* ---------- reused components ---------- */
-function renderLangs(){
-  $("langs").innerHTML=LANGS.map(l=>`<button type="button" data-l="${l}" aria-pressed="${S.lang===l}" lang="${l}">${l.toUpperCase()}</button>`).join("");
-  $("langs").querySelectorAll("button").forEach(b=>b.onclick=()=>{S.lang=b.dataset.l;try{localStorage.setItem("dm_lang",S.lang)}catch(e){};document.documentElement.lang=S.lang;render(true)});
-}
-function renderXP(){
-  const xp=computeXP();const box=$("xp");
-  box.classList.toggle("hidden",S.screen==="welcome"||S.screen==="blocked"||S.screen==="age"||S.screen==="consent");
-  $("xpVal").textContent=xp;
-  if(xp>S.lastXP&&S.lastXP>=0){const f=document.createElement("span");f.className="xp-float";f.textContent="+"+(xp-S.lastXP);box.appendChild(f);setTimeout(()=>f.remove(),1100);box.classList.remove("bump");void box.offsetWidth;box.classList.add("bump")}
-  S.lastXP=xp;
 }
 function h(html){const d=document.createElement("div");d.innerHTML=html.trim();return d.firstElementChild}
 
@@ -1912,6 +921,25 @@ function brainSVG(){
   [[14,206],[262,4],[262,196]].forEach((p,i)=>s+=`<g transform="translate(${p[0]} ${p[1]}) scale(.55)"><circle cx="60" cy="70" r="62" fill="#0b1d31" stroke="#22E4D4" stroke-opacity=".6" stroke-width="2"/><g transform="translate(0 4)" clip-path="url(#avc)">${avatarSVG(picks[i].av).replace(/<svg[^>]*>|<\/svg>/g,"")}</g></g>`);
   return s+`<clipPath id="avc"><circle cx="60" cy="66" r="61"/></clipPath></svg>`;
 }
+function vWelcome(){
+  const el=h(`<section class="card hero">
+    <div>
+      <div class="eyebrow">${t("w_eyebrow")}</div>
+      <h1>${t("w_title")}</h1>
+      <p>${t("w_text")}</p>
+      <div class="meta-row"><span class="pill">${t("m1")}</span><span class="pill">${t("m2")}</span><span class="pill">${t("m3")}</span><span class="pill">${t("m4")}</span></div>
+      <button class="btn big" id="go" style="margin-top:14px">${t("start")}</button>
+    </div>
+    <div class="brain">${brainSVG()}</div>
+    <div class="levels" style="grid-column:1/-1">
+      ${[["lv0","lv0d","🎟️"],["lv1","lv1d","🪪"],["lv2","lv2d","📱"],["lv3","lv3d","🧠"]].map((l,i)=>`<div class="lvl"><span class="e">${l[2]}</span><div class="n">${t("level").toUpperCase()} 0${i}</div><div class="t">${t(l[0])}</div><div class="d">${t(l[1])}</div></div>`).join("")}
+    </div>
+  </section>`);
+  el.querySelector("#go").onclick=()=>{S.screen="age";S.started=S.started||Date.now();render()};
+  return el;
+}
+
+/* ---------- Age (Check-in) ---------- */
 function vAge(){
   const el=h(`<section class="card">
     <div class="qhead"><div class="eyebrow">${t("level")} 00 · ${t("lv0")}</div></div>
@@ -1964,6 +992,51 @@ function vConsent(){
 }
 
 /* ---------- Questions ---------- */
+function vQuestion(){
+  const st=steps();const s=st[S.pos];
+  if(s.levelup)return vLevelUp(s.lvl);
+  const q=Q[s.id];
+  const qs=st.filter(x=>!x.levelup);const n=qs.indexOf(s)+1;
+  const lvlQs=st.filter(x=>x.lvl===s.lvl&&!x.levelup);const ln=lvlQs.indexOf(s)+1;
+  const el=h(`<section class="card">
+    <div class="qhead"><div class="eyebrow">${t("level")} 0${s.lvl} · ${t("lv"+s.lvl)}</div><div class="qcount">${t("qOf").replace("{n}",n).replace("{t}",qs.length)}</div></div>
+    <div class="qbar"><i style="width:${(ln-1)/lvlQs.length*100}%"></i></div>
+    ${q.type==="swipe"?"":`<div class="question" id="qtitle">${esc(t(q.key))}</div><p class="hint">${q.type==="list"?(q.multi?t("pickN"):t("pick1")):q.type==="gender"?t("pick1"):q.type==="country"?t("country_h"):q.type==="platforms"?t("plat_h"):t("time_h")}</p>`}
+    <div id="body"></div>
+    <div class="nav"><button class="btn ghost" id="bk">${t("back")}</button>${q.type==="swipe"?"":`<button class="btn" id="nx">${t("next")}</button>`}</div>
+    <div id="err" class="status hidden" role="alert"></div>
+    <p class="note">${t("noWrong")}</p>
+  </section>`);
+  const body=el.querySelector("#body");
+  const nx=el.querySelector("#nx");
+  const refresh=()=>{if(nx)nx.disabled=!answered(s.id);renderPassport();renderXP()};
+  const advance=()=>{S.pos++;render()};
+  ({list:qList,gender:qGender,country:qCountry,platforms:qPlatforms,time:qTime,swipe:qSwipe})[q.type](body,s.id,q,refresh,advance);
+  refresh();
+  if(nx)nx.onclick=advance;
+  el.querySelector("#bk").onclick=()=>{if(S.pos===0){S.screen="consent"}else S.pos--;render()};
+  return el;
+}
+
+function qList(body,id,q,refresh,advance){
+  const g=h(`<div class="tiles" role="group"></div>`);
+  if(q.big)g.style.gridTemplateColumns="repeat(auto-fill,minmax(150px,1fr))";
+  q.opts.forEach(([k,ic])=>{
+    const val=/^\d/.test(k)?k+" years":en(k);
+    const label=/^\d/.test(k)?k+" "+t("years"):t(k);
+    const sel=q.multi?(S.a[id]||[]).includes(val):S.a[id]===val;
+    const b=h(`<button type="button" class="tile ${q.big?"":"row"}" aria-pressed="${sel}"><span class="ico" aria-hidden="true">${ic}</span><span>${esc(label)}</span></button>`);
+    b.onclick=()=>{
+      if(q.multi){let a=S.a[id]||[];const P=en("prefer");
+        a=a.includes(val)?a.filter(x=>x!==val):(val===P?[val]:[...a.filter(x=>x!==P),val]);S.a[id]=a;
+        g.querySelectorAll(".tile").forEach((x,i)=>{const kv=/^\d/.test(q.opts[i][0])?q.opts[i][0]+" years":en(q.opts[i][0]);x.setAttribute("aria-pressed",a.includes(kv))});refresh();
+      }else{S.a[id]=val;g.querySelectorAll(".tile").forEach(x=>x.setAttribute("aria-pressed","false"));b.setAttribute("aria-pressed","true");refresh();setTimeout(advance,380)}
+    };
+    g.appendChild(b);
+  });
+  body.appendChild(g);
+}
+
 function qGender(body,id,q,refresh,advance){
   const g=h(`<div class="tiles genders" role="group"></div>`);
   q.opts.forEach(k=>{
@@ -1976,6 +1049,7 @@ function qGender(body,id,q,refresh,advance){
   box.querySelector("input").oninput=e=>{S.a.gender_self_describe=e.target.value.trim()||undefined;renderPassport()};
   body.append(g,box);
 }
+
 function qCountry(body,id,q,refresh){
   const wrap=h(`<div class="country-grid"></div>`);
   // map
@@ -2014,6 +1088,7 @@ function qCountry(body,id,q,refresh){
   update(true);
   wrap.append(map,side);body.appendChild(wrap);
 }
+
 function qPlatforms(body,id,q,refresh){
   const sel=()=>S.a[id]||[];
   const wrap=h(`<div class="phone-wrap"><div class="phone"><div class="screen"><div class="apps" role="group" aria-label="${esc(t(q.key))}"></div></div></div>
@@ -2032,6 +1107,172 @@ function qPlatforms(body,id,q,refresh){
   function upd(){const a=sel();apps.querySelectorAll(".app").forEach((b,i)=>b.setAttribute("aria-pressed",a.includes(PLATFORMS[i].id)));ob.setAttribute("aria-pressed",a.includes(OTHER));nb.setAttribute("aria-pressed",a.includes(NONE));wrap.querySelector("#cnt").textContent=a.filter(x=>x!==NONE).length}
   upd();body.appendChild(wrap);
 }
+
+function qTime(body,id,q,refresh){
+  const PRE="Prefer not to say";
+  const idx=()=>{const v=S.a[id];const i=TIME_KEYS.findIndex(k=>en(k)===v);return i};
+  const wrap=h(`<div class="gauge">
+    <svg viewBox="0 0 240 140" aria-hidden="true"><defs><linearGradient id="gg" x1="0" x2="1"><stop offset="0" stop-color="#22E4D4"/><stop offset=".55" stop-color="#E0BE86"/><stop offset="1" stop-color="#F09A90"/></linearGradient></defs>
+      <path d="M30 120A90 90 0 0 1 210 120" stroke="#13304a" stroke-width="18" fill="none" stroke-linecap="round"/>
+      <path id="arc" d="M30 120A90 90 0 0 1 210 120" stroke="url(#gg)" stroke-width="18" fill="none" stroke-linecap="round" pathLength="100" stroke-dasharray="0 100" style="transition:stroke-dasharray .4s"/>
+      <g id="needle" style="transform-origin:120px 120px;transition:transform .4s"><path d="M120 120L120 44" stroke="#EAF4F8" stroke-width="4" stroke-linecap="round"/><circle cx="120" cy="120" r="9" fill="#EAF4F8"/></g>
+    </svg>
+    <div class="emo" id="emo">⏳</div><div class="val" id="val"></div>
+    <input type="range" min="0" max="5" step="1" aria-label="${esc(t(q.key))}">
+    <div class="ticks"></div>
+    <div class="chip-row"><button type="button" class="chip" id="pre">🔒 ${t("prefer")}</button></div>
+  </div>`);
+  const r=wrap.querySelector("input"),ticks=wrap.querySelector(".ticks");
+  TIME_KEYS.forEach((k,i)=>{const b=h(`<button type="button">${esc(t(k))}</button>`);b.onclick=()=>set(i);ticks.appendChild(b)});
+  r.oninput=()=>set(+r.value);
+  wrap.querySelector("#pre").onclick=()=>{S.a[id]=PRE;upd();refresh()};
+  function set(i){S.a[id]=en(TIME_KEYS[i]);upd();refresh()}
+  function upd(){
+    const i=idx(),pre=S.a[id]===PRE;
+    r.value=i<0?2:i;
+    wrap.querySelector("#arc").setAttribute("stroke-dasharray",i<0?"0 100":`${(i+1)/6*100} 100`);
+    wrap.querySelector("#needle").style.transform=`rotate(${i<0?0:-90+(i+0.5)/6*180}deg)`;
+    wrap.querySelector("#emo").textContent=pre?"🔒":i<0?"⏳":TIME_EMO[i];
+    wrap.querySelector("#val").textContent=pre?t("prefer"):i<0?t("time_move"):t(TIME_KEYS[i]);
+    ticks.querySelectorAll("button").forEach((b,j)=>b.setAttribute("aria-pressed",j===i));
+    wrap.querySelector("#pre").setAttribute("aria-pressed",pre);
+  }
+  upd();body.appendChild(wrap);
+}
+
+function qSwipe(body,id,q,refresh,advance){
+  const ri=REALITY.findIndex(r=>r[0]===id);
+  const left=REALITY.length-ri-1;
+  const wrap=h(`<div>
+    <div class="swipe-stage">${left>1?'<div class="sghost g2"></div>':""}${left>0?'<div class="sghost g1"></div>':""}
+      <div class="swipe-card" tabindex="0" role="group" aria-label="${esc(t(q.key))} — ${esc(t("sw_hint"))}">
+        <div class="swipe-hint"><span class="n">← ${t("sw_no")}</span><span class="qcount">${t("card")} ${ri+1}/7</span><span class="y">${t("sw_yes")} →</span></div>
+        <div><div class="sicon" aria-hidden="true">${q.icon}</div><div class="prompt">${esc(t(q.key))}</div></div>
+        <div class="qcount" style="text-align:center">${t("sw_hint")}</div>
+        <div class="stamp no">${t("sw_no")}</div><div class="stamp yes">${t("sw_yes")}</div>
+      </div>
+    </div>
+    <div class="swipe-actions"><button type="button" class="sa no" aria-label="${t("sw_no")}" aria-pressed="${S.a[id]==="No"}">✕</button><button type="button" class="sa yes" aria-label="${t("sw_yes")}" aria-pressed="${S.a[id]==="Yes"}">✓</button></div>
+    <div class="dots">${REALITY.map((r,i)=>`<i class="${i===ri?"cur":S.a[r[0]]==="Yes"?"y":S.a[r[0]]==="No"?"n":""}"></i>`).join("")}</div>
+  </div>`);
+  const card=wrap.querySelector(".swipe-card");
+  let sx=0,dx=0,drag=false,locked=false;
+  const decide=(ans,dir)=>{if(locked)return;locked=true;S.a[id]=ans;refresh();card.querySelector(".stamp."+(dir>0?"yes":"no")).style.opacity=1;card.style.transform=`translate(${dir*800}px,-30px) rotate(${dir*20}deg)`;card.style.opacity="0";setTimeout(advance,280)};
+  wrap.querySelector(".sa.no").onclick=()=>decide("No",-1);
+  wrap.querySelector(".sa.yes").onclick=()=>decide("Yes",1);
+  card.addEventListener("pointerdown",e=>{if(locked)return;sx=e.clientX;dx=0;drag=true;card.classList.add("dragging");card.setPointerCapture(e.pointerId)});
+  card.addEventListener("pointermove",e=>{if(!drag)return;dx=e.clientX-sx;card.style.transform=`translateX(${dx}px) rotate(${dx/18}deg)`;card.querySelector(".stamp.yes").style.opacity=Math.max(0,Math.min(1,dx/100));card.querySelector(".stamp.no").style.opacity=Math.max(0,Math.min(1,-dx/100))});
+  const rel=()=>{if(!drag)return;drag=false;card.classList.remove("dragging");if(dx>85)decide("Yes",1);else if(dx<-85)decide("No",-1);else{card.style.transform="";card.querySelectorAll(".stamp").forEach(s=>s.style.opacity=0)}};
+  card.addEventListener("pointerup",rel);card.addEventListener("pointercancel",rel);
+  card.addEventListener("keydown",e=>{if(e.key==="ArrowRight"){e.preventDefault();decide("Yes",1)}if(e.key==="ArrowLeft"){e.preventDefault();decide("No",-1)}});
+  body.appendChild(wrap);
+  setTimeout(()=>card.focus({preventScroll:true}),50);
+}
+
+/* ---------- Level up ---------- */
+function vLevelUp(l){
+  const icons=["","🪪","📱","🧠"];
+  const el=h(`<section class="card levelup">
+    <div class="eyebrow">${t("level")} 0${l} · ${t("lv"+l)}</div>
+    <div class="big-stamp">${icons[l]}<small>${t("lv"+l).toUpperCase()}</small></div>
+    <h2>${t("lu_title")}</h2>
+    <div class="bonus">${t("lu_bonus")}</div>
+    <p style="color:var(--muted);max-width:46ch;margin:10px auto 0">${t("lu"+l)}</p>
+    <div class="nav" style="justify-content:center;gap:14px"><button class="btn ghost" id="bk">${t("back")}</button><button class="btn big" id="nx">${l===3?t("lu_submit"):t("lu_next")}</button></div>
+    <div id="err" class="status hidden" role="alert"></div>
+  </section>`);
+  el.querySelector("#bk").onclick=()=>{S.pos--;render()};
+  el.querySelector("#nx").onclick=()=>{if(l===3)submit(el);else{S.pos++;render()}};
+  setTimeout(()=>burst(60),150);
+  return el;
+}
+
+/* ---------- Submit ---------- */
+function buildPayload(){
+  const a=S.a,minor=isMinor();
+  const rc={};REALITY.forEach(([id])=>rc[id]=a[id]||null);
+  return{
+    survey_version:CONFIG.SURVEY_VERSION,
+    lang:S.lang,
+    age_group:S.age==="prefer"?"Prefer not to say":S.age,
+    consent_type:minor?"minor_with_guardian_consent":"adult",
+    gender:a.gender||null,
+    gender_self_describe:a.gender==="Self-describe"?(a.gender_self_describe||null):null,
+    country:a.country_code?en(a.country_code):(a.country_group==="prefer_not"?"Prefer not to say":null),
+    country_group:a.country_group||null,
+    country_other:a.country_other||null,
+    education:a.education||null,
+    employment_status:a.employment_status||null,
+    parent_guardian:minor?null:(a.parent_guardian||null),
+    children_age_groups:(!minor&&a.parent_guardian==="Yes")?(a.children_age_groups||[]):[],
+    platforms_weekly:a.platforms_weekly||[],
+    daily_social_time:a.daily_social_time||null,
+    ...rc,
+    duration_seconds:S.started?Math.round((Date.now()-S.started)/1000):null
+  };
+}
+async function submit(el){
+  const btn=el.querySelector("#nx"),err=el.querySelector("#err");
+  btn.disabled=true;btn.textContent=t("submitting");
+  const payload=buildPayload();S.payload=payload;
+  if(!CONFIG.LIVE){S.submitted=false;finish();return}
+  try{
+    const r=await fetch(CONFIG.SUPABASE_URL.replace(/\/+$/,"")+"/rest/v1/"+CONFIG.TABLE,{method:"POST",headers:{"Content-Type":"application/json","apikey":CONFIG.SUPABASE_KEY,"Authorization":"Bearer "+CONFIG.SUPABASE_KEY,"Prefer":"return=minimal"},body:JSON.stringify(payload)});
+    if(!r.ok)throw new Error("HTTP "+r.status);
+    S.submitted=true;finish();
+  }catch(e){err.textContent=t("err_save")+" ("+e.message+")";err.classList.remove("hidden");btn.disabled=false;btn.textContent=t("retry")}
+}
+function finish(){S.screen="done";render();setTimeout(()=>burst(220),200)}
+
+/* ---------- Done ---------- */
+function archetype(){
+  const a=S.a.q2_scrolling,b=S.a.q6_changed_use;
+  if(a==="Yes"&&b==="Yes")return"ar1";if(a==="Yes"&&b==="No")return"ar2";
+  if(a==="No"&&b==="Yes")return"ar3";if(a==="No"&&b==="No")return"ar4";return"ar0";
+}
+function vDone(){
+  const d=passportData();const ar=archetype();
+  const el=h(`<section class="card">
+    <div style="text-align:center">
+      <div class="eyebrow">${t("d_eyebrow")}</div>
+      <h2 style="font-size:clamp(28px,4vw,42px);margin:10px 0 6px">${t("d_title")}</h2>
+      <p style="color:var(--muted);margin:0">${t("d_text")}</p>
+      ${CONFIG.LIVE?"":`<p class="note" style="color:var(--gold)">⚠ ${t("d_preview")}</p>`}
+    </div>
+    <div class="done-grid">
+      <div class="pcard">
+        <div class="pp-head"><div class="pp-title">${t("passport")}</div><div class="pp-id">${S.pid}</div></div>
+        <div style="display:flex;gap:16px;align-items:center;margin-top:12px">
+          <div class="pp-avatar has" style="margin:0;width:120px;height:120px;flex:0 0 auto">${d.age?avatarSVG(d.age.av):""}</div>
+          <div><div class="qcount">${t("profile")}</div><div class="arch">${t(ar)}</div><div style="font-size:14px;color:#cfe0ea">${t(ar+"d")}</div></div>
+        </div>
+        <div class="pp-rows" style="grid-template-columns:1fr 1fr">
+          <div class="pp-row"><span>${t("pp_age")}</span><b>${d.age?esc(rangeLabel(d.age)):"—"}</b></div>
+          <div class="pp-row"><span>${t("pp_home")}</span><b>${esc(countryLabel())}</b></div>
+          <div class="pp-row"><span>${t("rank")}</span><b style="color:var(--teal)">${t(d.rk.key)}</b></div>
+          <div class="pp-row"><span>XP</span><b>${d.xp}</b></div>
+        </div>
+        <div class="stamps">${["🪪","📱","🧠"].map(i=>`<div class="stampc on">${i}</div>`).join("")}</div>
+        <div class="badges" style="margin-top:12px">${["🎮","🪪","🔭","✅","🧠"].map((ic,i)=>`<div class="badge on" data-name="${esc(t("bd"+i))}">${ic}</div>`).join("")}</div>
+      </div>
+      <div>
+        <div class="sec-t" style="margin-top:0">${t("facts_t")}</div>
+        <div class="facts">${[1,2,3].map(i=>`<button type="button" class="fact ${S.flipped[i]?"flip":""}" data-i="${i}"><div class="fact-in"><div class="fside ffront"><span class="q">${["","🛡️","🔐","🇪🇺"][i]}</span>${t("flip")}</div><div class="fside fback">${esc(t("f"+i))}<small>${esc(t("f"+i+"s"))}</small></div></div></button>`).join("")}</div>
+        <button class="btn ghost" id="share" style="margin-top:16px;width:100%">🔗 ${t("share")}</button>
+      </div>
+    </div>
+    ${CONFIG.LIVE?"":`<details class="dev"><summary>${t("dev")}</summary><pre>${esc(JSON.stringify(S.payload||buildPayload(),null,2))}</pre></details>`}
+  </section>`);
+  el.querySelectorAll(".fact").forEach(f=>f.onclick=()=>{f.classList.toggle("flip");S.flipped[f.dataset.i]=f.classList.contains("flip")});
+  el.querySelector("#share").onclick=async e=>{
+    const url=location.href.split("#")[0];
+    try{if(navigator.share){await navigator.share({title:"The Digital Mind",url});return}}catch(_){return}
+    try{await navigator.clipboard.writeText(url);e.target.textContent="✓ "+t("copied")}catch(_){}
+  };
+  return el;
+}
+
+/* ---------- Confetti ---------- */
 function burst(n){
   if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;
   const c=$("confetti");c.classList.remove("hidden");const x=c.getContext("2d");
@@ -2041,6 +1282,7 @@ function burst(n){
   let f=0;(function loop(){x.clearRect(0,0,c.width,c.height);ps.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.35;p.vx*=.99;p.r+=p.vr;x.save();x.translate(p.x,p.y);x.rotate(p.r);x.fillStyle=p.c;x.fillRect(-p.s/2,-p.s/4,p.s,p.s/2);x.restore()});
     if(++f<150)requestAnimationFrame(loop);else{x.clearRect(0,0,c.width,c.height);c.classList.add("hidden")}})();
 }
+
 render();
 </script>
 </body>
